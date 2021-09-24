@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A8F5ACBE026A24102B15282 /* Pods_Tradepop_TradepopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23F3D5EF231045935D85B7DE /* Pods_Tradepop_TradepopUITests.framework */; };
+		11771BD1FF2B5C31B331D82F /* Pods_TradepopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A3E32FE145C2BD094ADBB3 /* Pods_TradepopTests.framework */; };
+		670EA9C09CADFDB361ADC076 /* Pods_Tradepop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D7B88DB026313E1263FA333 /* Pods_Tradepop.framework */; };
+		D30B02AE26FA40D500D63CA8 /* NoUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B02AD26FA40D500D63CA8 /* NoUserView.swift */; };
+		D30B02B026FA40ED00D63CA8 /* NoUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D30B02AF26FA40ED00D63CA8 /* NoUserView.xib */; };
+		D30B02B526FA41B800D63CA8 /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D30B02B226FA41B800D63CA8 /* SourceSansPro-Regular.ttf */; };
+		D30B02B626FA41B800D63CA8 /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D30B02B326FA41B800D63CA8 /* SourceSansPro-Bold.ttf */; };
+		D30B02B726FA41B800D63CA8 /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D30B02B426FA41B800D63CA8 /* SourceSansPro-SemiBold.ttf */; };
 		D32B183F26F78DC00093EE46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32B183E26F78DC00093EE46 /* AppDelegate.swift */; };
 		D32B184126F78DC00093EE46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32B184026F78DC00093EE46 /* SceneDelegate.swift */; };
 		D32B184826F78DC10093EE46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D32B184726F78DC10093EE46 /* Assets.xcassets */; };
@@ -17,6 +25,10 @@
 		D32B187726F79C500093EE46 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32B187626F79C500093EE46 /* AppCoordinator.swift */; };
 		D32B187A26F7A53A0093EE46 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32B187926F7A53A0093EE46 /* DataManager.swift */; };
 		D357E74E26F8D44500A8723F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357E74D26F8D44500A8723F /* UIColor+Extension.swift */; };
+		D357E75026F8DE4100A8723F /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357E74F26F8DE4100A8723F /* ProfileViewModel.swift */; };
+		D357E75826F8E4EE00A8723F /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357E75726F8E4EE00A8723F /* ProfileCoordinator.swift */; };
+		D357E76326F8F51C00A8723F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357E76126F8F51C00A8723F /* ProfileViewController.swift */; };
+		D357E76426F8F51C00A8723F /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D357E76226F8F51C00A8723F /* ProfileViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +49,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		23F3D5EF231045935D85B7DE /* Pods_Tradepop_TradepopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tradepop_TradepopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E16A847E3FA03502B5C9BA3 /* Pods-Tradepop-TradepopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tradepop-TradepopUITests.debug.xcconfig"; path = "Target Support Files/Pods-Tradepop-TradepopUITests/Pods-Tradepop-TradepopUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3242FB91C3E5392C72686ECE /* Pods-Tradepop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tradepop.release.xcconfig"; path = "Target Support Files/Pods-Tradepop/Pods-Tradepop.release.xcconfig"; sourceTree = "<group>"; };
+		482B2D68394B3131826CAD23 /* Pods-TradepopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradepopTests.debug.xcconfig"; path = "Target Support Files/Pods-TradepopTests/Pods-TradepopTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5D7B88DB026313E1263FA333 /* Pods_Tradepop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tradepop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65B85108B6BC6D319FA06217 /* Pods-TradepopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradepopTests.release.xcconfig"; path = "Target Support Files/Pods-TradepopTests/Pods-TradepopTests.release.xcconfig"; sourceTree = "<group>"; };
+		A7A3E32FE145C2BD094ADBB3 /* Pods_TradepopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TradepopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD3CAC157E503D71882C721B /* Pods-Tradepop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tradepop.debug.xcconfig"; path = "Target Support Files/Pods-Tradepop/Pods-Tradepop.debug.xcconfig"; sourceTree = "<group>"; };
+		D30B02AD26FA40D500D63CA8 /* NoUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoUserView.swift; sourceTree = "<group>"; };
+		D30B02AF26FA40ED00D63CA8 /* NoUserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoUserView.xib; sourceTree = "<group>"; };
+		D30B02B226FA41B800D63CA8 /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
+		D30B02B326FA41B800D63CA8 /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
+		D30B02B426FA41B800D63CA8 /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
 		D32B183B26F78DC00093EE46 /* Tradepop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tradepop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D32B183E26F78DC00093EE46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D32B184026F78DC00093EE46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +78,11 @@
 		D32B187626F79C500093EE46 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		D32B187926F7A53A0093EE46 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		D357E74D26F8D44500A8723F /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		D357E74F26F8DE4100A8723F /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		D357E75726F8E4EE00A8723F /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		D357E76126F8F51C00A8723F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D357E76226F8F51C00A8723F /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		F13911D1E355F3B3028FA466 /* Pods-Tradepop-TradepopUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tradepop-TradepopUITests.release.xcconfig"; path = "Target Support Files/Pods-Tradepop-TradepopUITests/Pods-Tradepop-TradepopUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				670EA9C09CADFDB361ADC076 /* Pods_Tradepop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11771BD1FF2B5C31B331D82F /* Pods_TradepopTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +106,56 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A8F5ACBE026A24102B15282 /* Pods_Tradepop_TradepopUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B7563017B16B4665028062E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D7B88DB026313E1263FA333 /* Pods_Tradepop.framework */,
+				23F3D5EF231045935D85B7DE /* Pods_Tradepop_TradepopUITests.framework */,
+				A7A3E32FE145C2BD094ADBB3 /* Pods_TradepopTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		938FAA84B67029345256C7B8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD3CAC157E503D71882C721B /* Pods-Tradepop.debug.xcconfig */,
+				3242FB91C3E5392C72686ECE /* Pods-Tradepop.release.xcconfig */,
+				2E16A847E3FA03502B5C9BA3 /* Pods-Tradepop-TradepopUITests.debug.xcconfig */,
+				F13911D1E355F3B3028FA466 /* Pods-Tradepop-TradepopUITests.release.xcconfig */,
+				482B2D68394B3131826CAD23 /* Pods-TradepopTests.debug.xcconfig */,
+				65B85108B6BC6D319FA06217 /* Pods-TradepopTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D30B02AC26FA3F8500D63CA8 /* LoginRegister */ = {
+			isa = PBXGroup;
+			children = (
+				D30B02AD26FA40D500D63CA8 /* NoUserView.swift */,
+				D30B02AF26FA40ED00D63CA8 /* NoUserView.xib */,
+			);
+			path = LoginRegister;
+			sourceTree = "<group>";
+		};
+		D30B02B126FA41A600D63CA8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D30B02B326FA41B800D63CA8 /* SourceSansPro-Bold.ttf */,
+				D30B02B226FA41B800D63CA8 /* SourceSansPro-Regular.ttf */,
+				D30B02B426FA41B800D63CA8 /* SourceSansPro-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		D32B183226F78DC00093EE46 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +163,8 @@
 				D32B185426F78DC10093EE46 /* TradepopTests */,
 				D32B185F26F78DC10093EE46 /* TradepopUITests */,
 				D32B183C26F78DC00093EE46 /* Products */,
+				938FAA84B67029345256C7B8 /* Pods */,
+				4B7563017B16B4665028062E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,6 +191,7 @@
 				D32B187526F79C370093EE46 /* Products */,
 				D32B187C26F7A6AF0093EE46 /* AddProduct */,
 				D32B187D26F7A7220093EE46 /* Profile */,
+				D30B02AC26FA3F8500D63CA8 /* LoginRegister */,
 			);
 			path = Tradepop;
 			sourceTree = "<group>";
@@ -138,6 +217,7 @@
 		D32B186E26F790FA0093EE46 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D30B02B126FA41A600D63CA8 /* Fonts */,
 				D32B184926F78DC10093EE46 /* LaunchScreen.storyboard */,
 				D32B184726F78DC10093EE46 /* Assets.xcassets */,
 				D32B184C26F78DC10093EE46 /* Info.plist */,
@@ -157,6 +237,7 @@
 			children = (
 				D32B187126F792DE0093EE46 /* Coordinator.swift */,
 				D32B187626F79C500093EE46 /* AppCoordinator.swift */,
+				D357E75726F8E4EE00A8723F /* ProfileCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -194,6 +275,9 @@
 		D32B187D26F7A7220093EE46 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				D357E74F26F8DE4100A8723F /* ProfileViewModel.swift */,
+				D357E76126F8F51C00A8723F /* ProfileViewController.swift */,
+				D357E76226F8F51C00A8723F /* ProfileViewController.xib */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -213,9 +297,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D32B186526F78DC10093EE46 /* Build configuration list for PBXNativeTarget "Tradepop" */;
 			buildPhases = (
+				E0070DDBB0E63B76A54162D8 /* [CP] Check Pods Manifest.lock */,
 				D32B183726F78DC00093EE46 /* Sources */,
 				D32B183826F78DC00093EE46 /* Frameworks */,
 				D32B183926F78DC00093EE46 /* Resources */,
+				42470E8D6FBCE456251761A5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -230,6 +316,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D32B186826F78DC10093EE46 /* Build configuration list for PBXNativeTarget "TradepopTests" */;
 			buildPhases = (
+				F22B5D813FA22192B58E18C2 /* [CP] Check Pods Manifest.lock */,
 				D32B184D26F78DC10093EE46 /* Sources */,
 				D32B184E26F78DC10093EE46 /* Frameworks */,
 				D32B184F26F78DC10093EE46 /* Resources */,
@@ -248,9 +335,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D32B186B26F78DC10093EE46 /* Build configuration list for PBXNativeTarget "TradepopUITests" */;
 			buildPhases = (
+				F6D9BCC91D7120BC705531A1 /* [CP] Check Pods Manifest.lock */,
 				D32B185826F78DC10093EE46 /* Sources */,
 				D32B185926F78DC10093EE46 /* Frameworks */,
 				D32B185A26F78DC10093EE46 /* Resources */,
+				D79179955B29D24DA5D56D82 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -309,8 +398,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D30B02B526FA41B800D63CA8 /* SourceSansPro-Regular.ttf in Resources */,
+				D357E76426F8F51C00A8723F /* ProfileViewController.xib in Resources */,
 				D32B184B26F78DC10093EE46 /* LaunchScreen.storyboard in Resources */,
+				D30B02B026FA40ED00D63CA8 /* NoUserView.xib in Resources */,
 				D32B184826F78DC10093EE46 /* Assets.xcassets in Resources */,
+				D30B02B626FA41B800D63CA8 /* SourceSansPro-Bold.ttf in Resources */,
+				D30B02B726FA41B800D63CA8 /* SourceSansPro-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +424,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		42470E8D6FBCE456251761A5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tradepop/Pods-Tradepop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tradepop/Pods-Tradepop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tradepop/Pods-Tradepop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D79179955B29D24DA5D56D82 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tradepop-TradepopUITests/Pods-Tradepop-TradepopUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tradepop-TradepopUITests/Pods-Tradepop-TradepopUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tradepop-TradepopUITests/Pods-Tradepop-TradepopUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0070DDBB0E63B76A54162D8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tradepop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F22B5D813FA22192B58E18C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TradepopTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6D9BCC91D7120BC705531A1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tradepop-TradepopUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D32B183726F78DC00093EE46 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -341,6 +538,10 @@
 				D357E74E26F8D44500A8723F /* UIColor+Extension.swift in Sources */,
 				D32B184126F78DC00093EE46 /* SceneDelegate.swift in Sources */,
 				D32B187226F792DE0093EE46 /* Coordinator.swift in Sources */,
+				D30B02AE26FA40D500D63CA8 /* NoUserView.swift in Sources */,
+				D357E76326F8F51C00A8723F /* ProfileViewController.swift in Sources */,
+				D357E75826F8E4EE00A8723F /* ProfileCoordinator.swift in Sources */,
+				D357E75026F8DE4100A8723F /* ProfileViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +706,7 @@
 		};
 		D32B186626F78DC10093EE46 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD3CAC157E503D71882C721B /* Pods-Tradepop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -525,6 +727,7 @@
 		};
 		D32B186726F78DC10093EE46 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3242FB91C3E5392C72686ECE /* Pods-Tradepop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -545,6 +748,7 @@
 		};
 		D32B186926F78DC10093EE46 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 482B2D68394B3131826CAD23 /* Pods-TradepopTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -567,6 +771,7 @@
 		};
 		D32B186A26F78DC10093EE46 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65B85108B6BC6D319FA06217 /* Pods-TradepopTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -589,6 +794,7 @@
 		};
 		D32B186C26F78DC10093EE46 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E16A847E3FA03502B5C9BA3 /* Pods-Tradepop-TradepopUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -609,6 +815,7 @@
 		};
 		D32B186D26F78DC10093EE46 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F13911D1E355F3B3028FA466 /* Pods-Tradepop-TradepopUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
