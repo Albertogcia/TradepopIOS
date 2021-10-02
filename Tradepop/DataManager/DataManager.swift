@@ -9,4 +9,14 @@ import Foundation
 
 class DataManager {
     
+    let remoteDataManager: FirebaseDataManager
+    
+    init(remoteDataManager: FirebaseDataManager) {
+        self.remoteDataManager = remoteDataManager
+    }
+    
+}
+
+extension DataManager: LoginRegisterDataManager{
+    
 }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,9 @@
 		D30B02B526FA41B800D63CA8 /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D30B02B226FA41B800D63CA8 /* SourceSansPro-Regular.ttf */; };
 		D30B02B626FA41B800D63CA8 /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D30B02B326FA41B800D63CA8 /* SourceSansPro-Bold.ttf */; };
 		D30B02B726FA41B800D63CA8 /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D30B02B426FA41B800D63CA8 /* SourceSansPro-SemiBold.ttf */; };
+		D328D8F52704E587009D9F28 /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328D8F42704E587009D9F28 /* UserDataManager.swift */; };
+		D328D8F82704E6B5009D9F28 /* FirebaseUserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328D8F72704E6B5009D9F28 /* FirebaseUserDataManager.swift */; };
+		D328D8FA2704E6D6009D9F28 /* FirebaseUserDataManagerImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328D8F92704E6D6009D9F28 /* FirebaseUserDataManagerImp.swift */; };
 		D32B183F26F78DC00093EE46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32B183E26F78DC00093EE46 /* AppDelegate.swift */; };
 		D32B184126F78DC00093EE46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32B184026F78DC00093EE46 /* SceneDelegate.swift */; };
 		D32B184826F78DC10093EE46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D32B184726F78DC10093EE46 /* Assets.xcassets */; };
@@ -24,11 +27,22 @@
 		D32B187226F792DE0093EE46 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32B187126F792DE0093EE46 /* Coordinator.swift */; };
 		D32B187726F79C500093EE46 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32B187626F79C500093EE46 /* AppCoordinator.swift */; };
 		D32B187A26F7A53A0093EE46 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32B187926F7A53A0093EE46 /* DataManager.swift */; };
-		D357E74E26F8D44500A8723F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357E74D26F8D44500A8723F /* UIColor+Extension.swift */; };
+		D357E74E26F8D44500A8723F /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357E74D26F8D44500A8723F /* UIColor+Extensions.swift */; };
 		D357E75026F8DE4100A8723F /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357E74F26F8DE4100A8723F /* ProfileViewModel.swift */; };
 		D357E75826F8E4EE00A8723F /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357E75726F8E4EE00A8723F /* ProfileCoordinator.swift */; };
 		D357E76326F8F51C00A8723F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357E76126F8F51C00A8723F /* ProfileViewController.swift */; };
 		D357E76426F8F51C00A8723F /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D357E76226F8F51C00A8723F /* ProfileViewController.xib */; };
+		D3689FB327023BBB0052B003 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3689FB527023BBB0052B003 /* Localizable.strings */; };
+		D3BDFAB727075E5C00C88C7F /* LoginRegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BDFAB627075E5C00C88C7F /* LoginRegisterCoordinator.swift */; };
+		D3BDFAB927076C5800C88C7F /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BDFAB827076C5800C88C7F /* UIView+Extensions.swift */; };
+		D3BF081C26FE4C0B0043B563 /* LoginRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF081B26FE4C0B0043B563 /* LoginRegisterViewModel.swift */; };
+		D3BF081F26FE4C5E0043B563 /* LoginRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF081D26FE4C5E0043B563 /* LoginRegisterViewController.swift */; };
+		D3BF082026FE4C5E0043B563 /* LoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3BF081E26FE4C5E0043B563 /* LoginRegisterViewController.xib */; };
+		D3EAAD982705BE3A002AF85F /* LoginRegisterDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAAD972705BE3A002AF85F /* LoginRegisterDataManager.swift */; };
+		D3EAAD9A2705C255002AF85F /* FirebaseDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAAD992705C255002AF85F /* FirebaseDataManager.swift */; };
+		D3EAAD9C2705C265002AF85F /* FirebaseDataManagerImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAAD9B2705C265002AF85F /* FirebaseDataManagerImp.swift */; };
+		D3EB979F27086F3500CFF38A /* UIViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB979E27086F3500CFF38A /* UIViewController + Extensions.swift */; };
+		D3EB97A12708789C00CFF38A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3EB97A02708789C00CFF38A /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +76,9 @@
 		D30B02B226FA41B800D63CA8 /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
 		D30B02B326FA41B800D63CA8 /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
 		D30B02B426FA41B800D63CA8 /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
+		D328D8F42704E587009D9F28 /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
+		D328D8F72704E6B5009D9F28 /* FirebaseUserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserDataManager.swift; sourceTree = "<group>"; };
+		D328D8F92704E6D6009D9F28 /* FirebaseUserDataManagerImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserDataManagerImp.swift; sourceTree = "<group>"; };
 		D32B183B26F78DC00093EE46 /* Tradepop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tradepop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D32B183E26F78DC00093EE46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D32B184026F78DC00093EE46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,11 +94,24 @@
 		D32B187126F792DE0093EE46 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		D32B187626F79C500093EE46 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		D32B187926F7A53A0093EE46 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		D357E74D26F8D44500A8723F /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		D357E74D26F8D44500A8723F /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		D357E74F26F8DE4100A8723F /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		D357E75726F8E4EE00A8723F /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		D357E76126F8F51C00A8723F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D357E76226F8F51C00A8723F /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		D3689FB427023BBB0052B003 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D3689FB627023BDF0052B003 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		D3689FB727023BE00052B003 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D3BDFAB627075E5C00C88C7F /* LoginRegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterCoordinator.swift; sourceTree = "<group>"; };
+		D3BDFAB827076C5800C88C7F /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		D3BF081B26FE4C0B0043B563 /* LoginRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterViewModel.swift; sourceTree = "<group>"; };
+		D3BF081D26FE4C5E0043B563 /* LoginRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterViewController.swift; sourceTree = "<group>"; };
+		D3BF081E26FE4C5E0043B563 /* LoginRegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginRegisterViewController.xib; sourceTree = "<group>"; };
+		D3EAAD972705BE3A002AF85F /* LoginRegisterDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterDataManager.swift; sourceTree = "<group>"; };
+		D3EAAD992705C255002AF85F /* FirebaseDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataManager.swift; sourceTree = "<group>"; };
+		D3EAAD9B2705C265002AF85F /* FirebaseDataManagerImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataManagerImp.swift; sourceTree = "<group>"; };
+		D3EB979E27086F3500CFF38A /* UIViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extensions.swift"; sourceTree = "<group>"; };
+		D3EB97A02708789C00CFF38A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F13911D1E355F3B3028FA466 /* Pods-Tradepop-TradepopUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tradepop-TradepopUITests.release.xcconfig"; path = "Target Support Files/Pods-Tradepop-TradepopUITests/Pods-Tradepop-TradepopUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,7 +163,6 @@
 				482B2D68394B3131826CAD23 /* Pods-TradepopTests.debug.xcconfig */,
 				65B85108B6BC6D319FA06217 /* Pods-TradepopTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -142,6 +171,10 @@
 			children = (
 				D30B02AD26FA40D500D63CA8 /* NoUserView.swift */,
 				D30B02AF26FA40ED00D63CA8 /* NoUserView.xib */,
+				D3BF081B26FE4C0B0043B563 /* LoginRegisterViewModel.swift */,
+				D3BF081D26FE4C5E0043B563 /* LoginRegisterViewController.swift */,
+				D3BF081E26FE4C5E0043B563 /* LoginRegisterViewController.xib */,
+				D3EAAD972705BE3A002AF85F /* LoginRegisterDataManager.swift */,
 			);
 			path = LoginRegister;
 			sourceTree = "<group>";
@@ -154,6 +187,17 @@
 				D30B02B426FA41B800D63CA8 /* SourceSansPro-SemiBold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D328D8F62704E6A5009D9F28 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				D328D8F72704E6B5009D9F28 /* FirebaseUserDataManager.swift */,
+				D328D8F92704E6D6009D9F28 /* FirebaseUserDataManagerImp.swift */,
+				D3EAAD992705C255002AF85F /* FirebaseDataManager.swift */,
+				D3EAAD9B2705C265002AF85F /* FirebaseDataManagerImp.swift */,
+			);
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 		D32B183226F78DC00093EE46 = {
@@ -183,12 +227,12 @@
 			children = (
 				D32B183E26F78DC00093EE46 /* AppDelegate.swift */,
 				D32B184026F78DC00093EE46 /* SceneDelegate.swift */,
+				D3EB97A02708789C00CFF38A /* GoogleService-Info.plist */,
 				D32B186E26F790FA0093EE46 /* Resources */,
 				D357E74C26F8D3C300A8723F /* Extension */,
 				D32B187826F7A4CB0093EE46 /* DataManager */,
 				D32B186F26F791380093EE46 /* Models */,
 				D32B187026F792AF0093EE46 /* Coordinator */,
-				D32B187526F79C370093EE46 /* Products */,
 				D32B187C26F7A6AF0093EE46 /* AddProduct */,
 				D32B187D26F7A7220093EE46 /* Profile */,
 				D30B02AC26FA3F8500D63CA8 /* LoginRegister */,
@@ -221,6 +265,7 @@
 				D32B184926F78DC10093EE46 /* LaunchScreen.storyboard */,
 				D32B184726F78DC10093EE46 /* Assets.xcassets */,
 				D32B184C26F78DC10093EE46 /* Info.plist */,
+				D3689FB527023BBB0052B003 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -238,6 +283,8 @@
 				D32B187126F792DE0093EE46 /* Coordinator.swift */,
 				D32B187626F79C500093EE46 /* AppCoordinator.swift */,
 				D357E75726F8E4EE00A8723F /* ProfileCoordinator.swift */,
+				D3BDFAB627075E5C00C88C7F /* LoginRegisterCoordinator.swift */,
+				D32B187526F79C370093EE46 /* Products */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -252,17 +299,11 @@
 		D32B187826F7A4CB0093EE46 /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
-				D32B187B26F7A5C20093EE46 /* Remote */,
+				D328D8F62704E6A5009D9F28 /* Firebase */,
 				D32B187926F7A53A0093EE46 /* DataManager.swift */,
+				D328D8F42704E587009D9F28 /* UserDataManager.swift */,
 			);
 			path = DataManager;
-			sourceTree = "<group>";
-		};
-		D32B187B26F7A5C20093EE46 /* Remote */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Remote;
 			sourceTree = "<group>";
 		};
 		D32B187C26F7A6AF0093EE46 /* AddProduct */ = {
@@ -285,7 +326,9 @@
 		D357E74C26F8D3C300A8723F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				D357E74D26F8D44500A8723F /* UIColor+Extension.swift */,
+				D357E74D26F8D44500A8723F /* UIColor+Extensions.swift */,
+				D3BDFAB827076C5800C88C7F /* UIView+Extensions.swift */,
+				D3EB979E27086F3500CFF38A /* UIViewController + Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -380,6 +423,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = D32B183226F78DC00093EE46;
 			productRefGroup = D32B183C26F78DC00093EE46 /* Products */;
@@ -402,7 +446,10 @@
 				D357E76426F8F51C00A8723F /* ProfileViewController.xib in Resources */,
 				D32B184B26F78DC10093EE46 /* LaunchScreen.storyboard in Resources */,
 				D30B02B026FA40ED00D63CA8 /* NoUserView.xib in Resources */,
+				D3689FB327023BBB0052B003 /* Localizable.strings in Resources */,
 				D32B184826F78DC10093EE46 /* Assets.xcassets in Resources */,
+				D3BF082026FE4C5E0043B563 /* LoginRegisterViewController.xib in Resources */,
+				D3EB97A12708789C00CFF38A /* GoogleService-Info.plist in Resources */,
 				D30B02B626FA41B800D63CA8 /* SourceSansPro-Bold.ttf in Resources */,
 				D30B02B726FA41B800D63CA8 /* SourceSansPro-SemiBold.ttf in Resources */,
 			);
@@ -533,12 +580,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				D32B187726F79C500093EE46 /* AppCoordinator.swift in Sources */,
+				D3EAAD9C2705C265002AF85F /* FirebaseDataManagerImp.swift in Sources */,
+				D3BDFAB927076C5800C88C7F /* UIView+Extensions.swift in Sources */,
+				D3BDFAB727075E5C00C88C7F /* LoginRegisterCoordinator.swift in Sources */,
 				D32B187A26F7A53A0093EE46 /* DataManager.swift in Sources */,
+				D3EAAD9A2705C255002AF85F /* FirebaseDataManager.swift in Sources */,
 				D32B183F26F78DC00093EE46 /* AppDelegate.swift in Sources */,
-				D357E74E26F8D44500A8723F /* UIColor+Extension.swift in Sources */,
+				D3BF081F26FE4C5E0043B563 /* LoginRegisterViewController.swift in Sources */,
+				D357E74E26F8D44500A8723F /* UIColor+Extensions.swift in Sources */,
 				D32B184126F78DC00093EE46 /* SceneDelegate.swift in Sources */,
+				D3EB979F27086F3500CFF38A /* UIViewController + Extensions.swift in Sources */,
+				D3BF081C26FE4C0B0043B563 /* LoginRegisterViewModel.swift in Sources */,
+				D328D8F52704E587009D9F28 /* UserDataManager.swift in Sources */,
+				D328D8FA2704E6D6009D9F28 /* FirebaseUserDataManagerImp.swift in Sources */,
 				D32B187226F792DE0093EE46 /* Coordinator.swift in Sources */,
+				D328D8F82704E6B5009D9F28 /* FirebaseUserDataManager.swift in Sources */,
 				D30B02AE26FA40D500D63CA8 /* NoUserView.swift in Sources */,
+				D3EAAD982705BE3A002AF85F /* LoginRegisterDataManager.swift in Sources */,
 				D357E76326F8F51C00A8723F /* ProfileViewController.swift in Sources */,
 				D357E75826F8E4EE00A8723F /* ProfileCoordinator.swift in Sources */,
 				D357E75026F8DE4100A8723F /* ProfileViewModel.swift in Sources */,
@@ -581,8 +639,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				D32B184A26F78DC10093EE46 /* Base */,
+				D3689FB627023BDF0052B003 /* es */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D3689FB527023BBB0052B003 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3689FB427023BBB0052B003 /* en */,
+				D3689FB727023BE00052B003 /* es */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -592,6 +660,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -653,6 +722,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "icon_profile.svg",
+      "filename" : "icon_close.svg",
       "idiom" : "universal"
     }
   ],
@@ -10,6 +10,7 @@
     "version" : 1
   },
   "properties" : {
+    "compression-type" : "lossless",
     "template-rendering-intent" : "template"
   }
 }

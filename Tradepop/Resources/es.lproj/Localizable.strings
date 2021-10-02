@@ -1,0 +1,17 @@
+//Generic
+"generic_loading" = "Cargando...";
+"generic_error" = "Error";
+"generic_ok" = "Ok";
+
+//NoUserView
+"no_user_view_label_message" = "Parece que aún no has iniciado sesión.";
+"no_user_to_login_button_message" = "Iniciar sesión";
+
+//LoginRegister
+"login_register_email_label" = "Email";
+"login_register_username_label" = "Nombre";
+"login_register_password_label" = "Contraseña";
+"login_register_login_title" = "Iniciar sesión";
+"login_register_register_title" = "Registrarse";
+"login_register_forgot_password" = "¿Olvidaste la contraseña?";
+"loading_register_login_message" = "Iniciando sesión...";

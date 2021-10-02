@@ -1,0 +1,17 @@
+//Generic
+"generic_loading" = "Loading...";
+"generic_error" = "Error";
+"generic_ok" = "Ok";
+
+//NoUserView
+"no_user_view_label_message" = "Looks like you haven't signed in yet.";
+"no_user_to_login_button_message" = "Sign in";
+
+//LoginRegister
+"login_register_email_label" = "Email";
+"login_register_username_label" = "Username";
+"login_register_password_label" = "Password";
+"login_register_login_title" = "Log in";
+"login_register_register_title" = "Sign in";
+"login_register_forgot_password" = "Forgot password?";
+"loading_register_login_message" = "Login in...";

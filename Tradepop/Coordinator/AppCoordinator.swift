@@ -6,10 +6,16 @@
 //
 import UIKit
 
-class AppCoordinator: Coordinator{
+class AppCoordinator: Coordinator {
     
     lazy var dataManager: DataManager = {
-        return DataManager()
+        let firebaseDataManager = FirebaseDataManagerImp()
+        return DataManager(remoteDataManager: firebaseDataManager)
+    }()
+    
+    lazy var userDataManager: UserDataManager = {
+        let firebaseUserDataManager = FirebaseUserDataManagerImp()
+        return UserDataManager(remoteDataManger: firebaseUserDataManager)
     }()
     
     let window: UIWindow
@@ -36,6 +42,9 @@ class AppCoordinator: Coordinator{
         
         let profileNavigationController = UINavigationController()
         profileNavigationController.isNavigationBarHidden = true
+        let profileCoordinator = ProfileCoordinator(presenter: profileNavigationController, userDataManager: userDataManager, loginRegisterDataManager: dataManager)
+        addChildCoordinator(profileCoordinator)
+        profileCoordinator.start()
 
         tabBarController.tabBar.tintColor = .primaryColor
 
@@ -58,5 +67,4 @@ class AppCoordinator: Coordinator{
     }
 
     override func finish() {}
-    
 }
