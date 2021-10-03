@@ -12,7 +12,7 @@ protocol ProfileCoordinatorDelegate: AnyObject {
 }
 
 protocol ProfileViewDelegate: AnyObject{
-    func showNoUserView()
+    func updateView(user: User?)
 }
 
 class ProfileViewModel{
@@ -25,15 +25,20 @@ class ProfileViewModel{
         self.userDataManager = userDataManager
     }
     
-    func viewDidAppear(){
-        
+    func viewWillAppear(){
+        userDataManager.getCurrentUser { [weak self] user in
+            guard let self = self else { return }
+            self.viewDelegate?.updateView(user: user)
+        }
     }
-    
-    func viewWasLoaded(){
         
-    }
-    
     func loginButtonTapped(){
         coordinatorDelegate?.loginButtonTapped()
+    }
+    
+    func logOut(){
+        userDataManager.logOut { successful in
+            self.viewDelegate?.updateView(user: nil)
+        }
     }
 }

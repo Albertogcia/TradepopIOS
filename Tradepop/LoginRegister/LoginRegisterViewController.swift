@@ -89,11 +89,13 @@ class LoginRegisterViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        self.showLoadingAlert(message: NSLocalizedString("loading_register_login_message", comment: ""))
+        showLoadingAlert(message: NSLocalizedString("loading_register_login_message", comment: ""))
+        viewModel.checkLoginFields(email: loginEmailTextField.text, password: loginPasswordTextField.text)
     }
     
     @IBAction func registerButtonTapped(_ sender: UIButton) {
-        self.showLoadingAlert()
+        showLoadingAlert()
+        viewModel.checkRegisterFields(userName: registerNameTextField.text, email: registerEmailTextField.text, password: registerPasswordTextField.text)
     }
     
     @IBAction func closeButtonTapped(_ sender: UIButton) {
@@ -130,12 +132,37 @@ class LoginRegisterViewController: UIViewController {
         registerView.isHidden = false
     }
     
-    @IBAction func forggotPasswordTapped(_ sender: UITapGestureRecognizer) {}
+    @IBAction func forggotPasswordTapped(_ sender: UITapGestureRecognizer) {
+        showTextFieldAlert(message: NSLocalizedString("login_register_forgot_password_message", comment: ""),
+                           actionTitle: NSLocalizedString("genering_send", comment: ""),
+                           inputPlaceholder: NSLocalizedString("login_register_email_label", comment: ""),
+                           actionHandler: { [weak self] email in
+                               guard let self = self, let email = email else { return }
+                               self.showLoadingAlert()
+                               self.viewModel.changePassword(email: email)
+                           })
+    }
 }
 
 extension LoginRegisterViewController: LoginRegisterViewDelegate {
+    func dismissLoadingWithSuccesfull() {
+        hideLoadingAlert { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.dismissViewController()
+        }
+    }
+    
     func showErrorMessage(message: String) {
-        self.hideLoadingAlert()
-        self.showErrorAlert(message: message)
+        hideLoadingAlert { [weak self] in
+            guard let self = self else { return }
+            self.showErrorAlert(message: message)
+        }
+    }
+    
+    func showMessage(message: String) {
+        hideLoadingAlert { [weak self] in
+            guard let self = self else { return }
+            self.showMessageAlert(message: message)
+        }
     }
 }

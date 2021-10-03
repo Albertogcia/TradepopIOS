@@ -2,6 +2,8 @@
 "generic_loading" = "Loading...";
 "generic_error" = "Error";
 "generic_ok" = "Ok";
+"generic_cancel" = "Cancel";
+"genering_send" = "Send";
 
 //NoUserView
 "no_user_view_label_message" = "Looks like you haven't signed in yet.";
@@ -15,3 +17,9 @@
 "login_register_register_title" = "Sign in";
 "login_register_forgot_password" = "Forgot password?";
 "loading_register_login_message" = "Login in...";
+"loading_register_empty_fields_error_message" = "Fields can't be empty";
+"loading_register_register_error_message" = "The email already exists or is invalid";
+"loading_register_login_error_message" = "The email or password is invalid";
+"login_register_forgot_password_message" = "Write your email to reset your password";
+"login_register_email_invalid" = "This email doesn't exists or is invalid";
+"login_register_recover_password_email_sent" = "An email has been sent to reset your password";

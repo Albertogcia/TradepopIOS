@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="Tradepop" customModuleProvider="target">
             <connections>
+                <outlet property="mainView" destination="rup-IP-cef" id="4SP-JB-dOk"/>
                 <outlet property="noUserView" destination="hzk-b3-Wuw" id="Tpb-Ed-eW6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -25,11 +26,28 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                     <color key="backgroundColor" name="primaryColor"/>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hzk-b3-Wuw" customClass="NoUserView" customModule="Tradepop" customModuleProvider="target">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hzk-b3-Wuw" customClass="NoUserView" customModule="Tradepop" customModuleProvider="target">
                     <rect key="frame" x="16" y="416" width="382" height="74"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="74" id="QNc-ld-1RD"/>
+                    </constraints>
+                </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rup-IP-cef" userLabel="mainView">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vvc-UZ-57M">
+                            <rect key="frame" x="183" y="394" width="48" height="30"/>
+                            <state key="normal" title="Logout"/>
+                            <connections>
+                                <action selector="logout:" destination="-1" eventType="touchUpInside" id="2I1-Oe-mqt"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="Vvc-UZ-57M" firstAttribute="centerX" secondItem="rup-IP-cef" secondAttribute="centerX" id="3UI-aF-qXi"/>
+                        <constraint firstItem="Vvc-UZ-57M" firstAttribute="centerY" secondItem="rup-IP-cef" secondAttribute="centerY" id="sY7-Lk-TkH"/>
                     </constraints>
                 </view>
             </subviews>
@@ -40,9 +58,13 @@
                 <constraint firstItem="hzk-b3-Wuw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="3Wx-7u-rJZ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GMR-At-T6K" secondAttribute="trailing" id="SQY-IW-svW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hzk-b3-Wuw" secondAttribute="trailing" constant="16" id="af9-74-MQM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="rup-IP-cef" secondAttribute="bottom" id="jED-bc-dvc"/>
                 <constraint firstItem="GMR-At-T6K" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="pkZ-nJ-QfS"/>
+                <constraint firstItem="rup-IP-cef" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="rHT-Zb-UXk"/>
+                <constraint firstItem="rup-IP-cef" firstAttribute="top" secondItem="GMR-At-T6K" secondAttribute="bottom" id="rt7-rB-Psa"/>
                 <constraint firstItem="hzk-b3-Wuw" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="tds-TP-IUx"/>
                 <constraint firstItem="GMR-At-T6K" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vDs-W7-lAq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rup-IP-cef" secondAttribute="trailing" id="zft-Fd-7XG"/>
             </constraints>
             <point key="canvasLocation" x="79.710144927536234" y="114.50892857142857"/>
         </view>

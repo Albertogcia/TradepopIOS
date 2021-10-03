@@ -43,6 +43,7 @@
 		D3EAAD9C2705C265002AF85F /* FirebaseDataManagerImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAAD9B2705C265002AF85F /* FirebaseDataManagerImp.swift */; };
 		D3EB979F27086F3500CFF38A /* UIViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB979E27086F3500CFF38A /* UIViewController + Extensions.swift */; };
 		D3EB97A12708789C00CFF38A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3EB97A02708789C00CFF38A /* GoogleService-Info.plist */; };
+		D3EB97A32708D13200CFF38A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB97A22708D13200CFF38A /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		D3EAAD9B2705C265002AF85F /* FirebaseDataManagerImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataManagerImp.swift; sourceTree = "<group>"; };
 		D3EB979E27086F3500CFF38A /* UIViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extensions.swift"; sourceTree = "<group>"; };
 		D3EB97A02708789C00CFF38A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D3EB97A22708D13200CFF38A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F13911D1E355F3B3028FA466 /* Pods-Tradepop-TradepopUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tradepop-TradepopUITests.release.xcconfig"; path = "Target Support Files/Pods-Tradepop-TradepopUITests/Pods-Tradepop-TradepopUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -273,6 +275,7 @@
 		D32B186F26F791380093EE46 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D3EB97A22708D13200CFF38A /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 				D3BF081F26FE4C5E0043B563 /* LoginRegisterViewController.swift in Sources */,
 				D357E74E26F8D44500A8723F /* UIColor+Extensions.swift in Sources */,
 				D32B184126F78DC00093EE46 /* SceneDelegate.swift in Sources */,
+				D3EB97A32708D13200CFF38A /* User.swift in Sources */,
 				D3EB979F27086F3500CFF38A /* UIViewController + Extensions.swift in Sources */,
 				D3BF081C26FE4C0B0043B563 /* LoginRegisterViewModel.swift in Sources */,
 				D328D8F52704E587009D9F28 /* UserDataManager.swift in Sources */,

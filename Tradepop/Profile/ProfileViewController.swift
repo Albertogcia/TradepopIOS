@@ -11,6 +11,8 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet var noUserView: NoUserView!
     
+    @IBOutlet var mainView: UIView!
+    
     let viewModel: ProfileViewModel
         
     init(viewModel: ProfileViewModel) {
@@ -30,7 +32,7 @@ class ProfileViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("kkk WillAppear")
+        viewModel.viewWillAppear()
     }
 
     private func configureView() {
@@ -39,8 +41,21 @@ class ProfileViewController: UIViewController {
             self.viewModel.loginButtonTapped()
         }
     }
+    
+    @IBAction func logout(_ sender: Any) {
+        viewModel.logOut()
+    }
 }
 
 extension ProfileViewController: ProfileViewDelegate {
-    func showNoUserView() {}
+    func updateView(user: User?) {
+        if let user = user{
+            noUserView.isHidden = true
+            mainView.isHidden = false
+        }
+        else{
+            mainView.isHidden = true
+            noUserView.isHidden = false
+        }
+    }
 }

@@ -24,13 +24,15 @@ class LoginRegisterCoordinator: Coordinator{
         loginRegisterViewModel.coordinatorDelegate = self
         loginRegisterViewModel.viewDelegate = loginRegisterViewController
         presenter.pushViewController(loginRegisterViewController, animated: true)
-        //presenter.showDetailViewController(loginRegisterViewController, sender: nil)
     }
     
     override func finish() {
+        presenter.popViewController(animated: true)
     }
 }
 
 extension LoginRegisterCoordinator: LoginRegisterCoordinatorDelegate{
-    
+    func dismissViewController() {
+        finish()
+    }
 }
