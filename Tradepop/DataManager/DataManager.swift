@@ -20,3 +20,7 @@ class DataManager {
 extension DataManager: LoginRegisterDataManager{
     
 }
+
+extension DataManager: ProductsDataManager{
+    
+}

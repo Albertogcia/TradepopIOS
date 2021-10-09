@@ -28,7 +28,7 @@ class AppCoordinator: Coordinator {
         let tabBarController = UITabBarController()
         
         let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = UIColor(named: "lightBackground")
+        appearance.backgroundColor = .primaryColor
         
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
         UINavigationBar.appearance().compactAppearance = appearance
@@ -36,6 +36,9 @@ class AppCoordinator: Coordinator {
 
         let productsNavigationController = UINavigationController()
         productsNavigationController.isNavigationBarHidden = true
+        let productsCoordinator = ProductsCoordinator(presenter: productsNavigationController, userDataManager: userDataManager, productsDataManager: dataManager)
+        addChildCoordinator(productsCoordinator)
+        productsCoordinator.start()
         
         let addProductNavigationController = UINavigationController()
         addProductNavigationController.isNavigationBarHidden = true
@@ -46,21 +49,19 @@ class AppCoordinator: Coordinator {
         addChildCoordinator(profileCoordinator)
         profileCoordinator.start()
 
-        tabBarController.tabBar.tintColor = .primaryColor
-
         tabBarController.viewControllers = [productsNavigationController, addProductNavigationController, profileNavigationController]
         
         tabBarController.tabBar.items?[0].image = UIImage(named: "icon_home")?.withTintColor(.primaryColor)
         tabBarController.tabBar.items?[0].selectedImage = UIImage(named: "icon_home")?.withTintColor(.accentColor)
-        tabBarController.tabBar.items?[0].title = NSLocalizedString("Productos", comment: "")
+        tabBarController.tabBar.items?[0].title = NSLocalizedString("main_tab_bar_products", comment: "")
         
         tabBarController.tabBar.items?[1].image = UIImage(named: "icon_add")?.withTintColor(.primaryColor)
         tabBarController.tabBar.items?[1].selectedImage = UIImage(named: "icon_add")?.withTintColor(.accentColor)
-        tabBarController.tabBar.items?[1].title = NSLocalizedString("Añadir", comment: "")
+        tabBarController.tabBar.items?[1].title = NSLocalizedString("main_tab_bar_add", comment: "")
         
         tabBarController.tabBar.items?[2].image = UIImage(named: "icon_profile")?.withTintColor(.primaryColor)
         tabBarController.tabBar.items?[2].selectedImage = UIImage(named: "icon_profile")?.withTintColor(.accentColor)
-        tabBarController.tabBar.items?[2].title = NSLocalizedString("Perfil", comment: "")
+        tabBarController.tabBar.items?[2].title = NSLocalizedString("main_tab_bar_profile", comment: "")
     
         window.rootViewController = tabBarController
         window.makeKeyAndVisible()

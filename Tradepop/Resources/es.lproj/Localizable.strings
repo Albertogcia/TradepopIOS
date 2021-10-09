@@ -1,3 +1,8 @@
+//Tab bar
+"main_tab_bar_products" = "Productos";
+"main_tab_bar_add" = "Añadir";
+"main_tab_bar_profile" = "Perfil";
+
 //Generic
 "generic_loading" = "Cargando...";
 "generic_error" = "Error";
