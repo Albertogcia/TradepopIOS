@@ -6,7 +6,10 @@
 //
 
 import Foundation
+import Firebase
 
 class FirebaseDataManagerImp: FirebaseDataManager{
+    
+    let db = Firestore.firestore()
     
 }

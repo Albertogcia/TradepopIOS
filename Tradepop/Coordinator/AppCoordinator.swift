@@ -42,6 +42,9 @@ class AppCoordinator: Coordinator {
         
         let addProductNavigationController = UINavigationController()
         addProductNavigationController.isNavigationBarHidden = true
+        let addProductCoordinator = AddProductCoordinator(presenter: addProductNavigationController, userDataManager: userDataManager, addProductDataManager: dataManager)
+        addChildCoordinator(addProductCoordinator)
+        addProductCoordinator.start()
         
         let profileNavigationController = UINavigationController()
         profileNavigationController.isNavigationBarHidden = true

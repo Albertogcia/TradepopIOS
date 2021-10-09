@@ -24,3 +24,7 @@ extension DataManager: LoginRegisterDataManager{
 extension DataManager: ProductsDataManager{
     
 }
+
+extension DataManager: AddProductDataManager{
+    
+}

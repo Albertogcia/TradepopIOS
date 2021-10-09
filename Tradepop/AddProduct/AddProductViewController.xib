@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddProductViewController" customModule="Tradepop" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egQ-qd-k4n" userLabel="StatusBarBackground">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    <color key="backgroundColor" name="primaryColor"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eV3-in-jOd" customClass="NoUserView" customModule="Tradepop" customModuleProvider="target">
+                    <rect key="frame" x="16" y="416" width="382" height="74"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="74" id="Cx9-Ks-vbS"/>
+                    </constraints>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6WO-AT-bdP">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Rs-4Z-crv">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="0Rs-4Z-crv" firstAttribute="top" secondItem="6WO-AT-bdP" secondAttribute="top" id="7Tf-GO-Nxs"/>
+                        <constraint firstAttribute="bottom" secondItem="0Rs-4Z-crv" secondAttribute="bottom" id="Giq-dH-AJu"/>
+                        <constraint firstItem="0Rs-4Z-crv" firstAttribute="height" secondItem="6WO-AT-bdP" secondAttribute="height" id="Q9s-LT-qp7"/>
+                        <constraint firstAttribute="trailing" secondItem="0Rs-4Z-crv" secondAttribute="trailing" id="cPK-bo-a8C"/>
+                        <constraint firstItem="0Rs-4Z-crv" firstAttribute="width" secondItem="6WO-AT-bdP" secondAttribute="width" id="cjj-eC-iTf"/>
+                        <constraint firstItem="0Rs-4Z-crv" firstAttribute="leading" secondItem="6WO-AT-bdP" secondAttribute="leading" id="t35-z5-X6A"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="egQ-qd-k4n" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1DT-nY-Iet"/>
+                <constraint firstItem="egQ-qd-k4n" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="51J-1g-NU0"/>
+                <constraint firstItem="eV3-in-jOd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="6a6-as-WgC"/>
+                <constraint firstItem="6WO-AT-bdP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="6mq-ra-aoM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="6WO-AT-bdP" secondAttribute="bottom" id="Dhr-KD-yOB"/>
+                <constraint firstAttribute="trailing" secondItem="egQ-qd-k4n" secondAttribute="trailing" id="ObF-Dv-a2j"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6WO-AT-bdP" secondAttribute="trailing" id="nna-jE-iBx"/>
+                <constraint firstItem="6WO-AT-bdP" firstAttribute="top" secondItem="egQ-qd-k4n" secondAttribute="bottom" id="ntr-Pt-Nrj"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="egQ-qd-k4n" secondAttribute="bottom" id="pgk-Pg-Qpi"/>
+                <constraint firstItem="eV3-in-jOd" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="qI6-i3-CjB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eV3-in-jOd" secondAttribute="trailing" constant="16" id="yif-Fu-i7p"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="eV3-in-jOd"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="131.8840579710145" y="107.8125"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="primaryColor">
+            <color red="0.22352941176470589" green="0.24313725490196078" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

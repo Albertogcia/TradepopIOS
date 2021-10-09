@@ -5,8 +5,13 @@ target 'Tradepop' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for Tradepop
-  pod 'Firebase/Auth'
+  # Pods for Tradepo
+	pod 'BoringSSL-GRPC', '0.0.3'
+	pod 'Firebase/Auth'
+	pod 'Firebase/Firestore'
+	pod 'FirebaseFirestoreSwift'
+  pod 'Firebase/Storage'
+  pod 'Kingfisher', '~> 7.0'
 
   target 'TradepopTests' do
     inherit! :search_paths

@@ -33,6 +33,11 @@
 		D357E76326F8F51C00A8723F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357E76126F8F51C00A8723F /* ProfileViewController.swift */; };
 		D357E76426F8F51C00A8723F /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D357E76226F8F51C00A8723F /* ProfileViewController.xib */; };
 		D3689FB327023BBB0052B003 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3689FB527023BBB0052B003 /* Localizable.strings */; };
+		D3B420FC2711EF2E000E6E08 /* AddProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B420FB2711EF2E000E6E08 /* AddProductViewModel.swift */; };
+		D3B420FF2711EF4A000E6E08 /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B420FD2711EF4A000E6E08 /* AddProductViewController.swift */; };
+		D3B421002711EF4A000E6E08 /* AddProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B420FE2711EF4A000E6E08 /* AddProductViewController.xib */; };
+		D3B421022711EF6B000E6E08 /* AddProductDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B421012711EF6B000E6E08 /* AddProductDataManager.swift */; };
+		D3B421042711F19F000E6E08 /* AddProductCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B421032711F19F000E6E08 /* AddProductCoordinator.swift */; };
 		D3BDFAB727075E5C00C88C7F /* LoginRegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BDFAB627075E5C00C88C7F /* LoginRegisterCoordinator.swift */; };
 		D3BDFAB927076C5800C88C7F /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BDFAB827076C5800C88C7F /* UIView+Extensions.swift */; };
 		D3BF081C26FE4C0B0043B563 /* LoginRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF081B26FE4C0B0043B563 /* LoginRegisterViewModel.swift */; };
@@ -108,6 +113,11 @@
 		D3689FB427023BBB0052B003 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D3689FB627023BDF0052B003 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		D3689FB727023BE00052B003 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D3B420FB2711EF2E000E6E08 /* AddProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewModel.swift; sourceTree = "<group>"; };
+		D3B420FD2711EF4A000E6E08 /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
+		D3B420FE2711EF4A000E6E08 /* AddProductViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddProductViewController.xib; sourceTree = "<group>"; };
+		D3B421012711EF6B000E6E08 /* AddProductDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductDataManager.swift; sourceTree = "<group>"; };
+		D3B421032711F19F000E6E08 /* AddProductCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductCoordinator.swift; sourceTree = "<group>"; };
 		D3BDFAB627075E5C00C88C7F /* LoginRegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterCoordinator.swift; sourceTree = "<group>"; };
 		D3BDFAB827076C5800C88C7F /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		D3BF081B26FE4C0B0043B563 /* LoginRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterViewModel.swift; sourceTree = "<group>"; };
@@ -299,6 +309,7 @@
 				D357E75726F8E4EE00A8723F /* ProfileCoordinator.swift */,
 				D3BDFAB627075E5C00C88C7F /* LoginRegisterCoordinator.swift */,
 				D3C188402711B5DF00505FC8 /* ProductsCoordinator.swift */,
+				D3B421032711F19F000E6E08 /* AddProductCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -327,6 +338,10 @@
 		D32B187C26F7A6AF0093EE46 /* AddProduct */ = {
 			isa = PBXGroup;
 			children = (
+				D3B420FB2711EF2E000E6E08 /* AddProductViewModel.swift */,
+				D3B420FD2711EF4A000E6E08 /* AddProductViewController.swift */,
+				D3B420FE2711EF4A000E6E08 /* AddProductViewController.xib */,
+				D3B421012711EF6B000E6E08 /* AddProductDataManager.swift */,
 			);
 			path = AddProduct;
 			sourceTree = "<group>";
@@ -362,7 +377,7 @@
 				D32B183726F78DC00093EE46 /* Sources */,
 				D32B183826F78DC00093EE46 /* Frameworks */,
 				D32B183926F78DC00093EE46 /* Resources */,
-				42470E8D6FBCE456251761A5 /* [CP] Embed Pods Frameworks */,
+				5CEC0A3074CE2B5A0DCF7BEA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -400,7 +415,7 @@
 				D32B185826F78DC10093EE46 /* Sources */,
 				D32B185926F78DC10093EE46 /* Frameworks */,
 				D32B185A26F78DC10093EE46 /* Resources */,
-				D79179955B29D24DA5D56D82 /* [CP] Embed Pods Frameworks */,
+				4F514EE15FEED9FC9792D8A8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -462,6 +477,7 @@
 			files = (
 				D30B02B526FA41B800D63CA8 /* SourceSansPro-Regular.ttf in Resources */,
 				D357E76426F8F51C00A8723F /* ProfileViewController.xib in Resources */,
+				D3B421002711EF4A000E6E08 /* AddProductViewController.xib in Resources */,
 				D32B184B26F78DC10093EE46 /* LaunchScreen.storyboard in Resources */,
 				D30B02B026FA40ED00D63CA8 /* NoUserView.xib in Resources */,
 				D3C1883D2711B55100505FC8 /* ProductsViewController.xib in Resources */,
@@ -491,24 +507,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		42470E8D6FBCE456251761A5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Tradepop/Pods-Tradepop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Tradepop/Pods-Tradepop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tradepop/Pods-Tradepop-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D79179955B29D24DA5D56D82 /* [CP] Embed Pods Frameworks */ = {
+		4F514EE15FEED9FC9792D8A8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -523,6 +522,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tradepop-TradepopUITests/Pods-Tradepop-TradepopUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5CEC0A3074CE2B5A0DCF7BEA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tradepop/Pods-Tradepop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tradepop/Pods-Tradepop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tradepop/Pods-Tradepop-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E0070DDBB0E63B76A54162D8 /* [CP] Check Pods Manifest.lock */ = {
@@ -613,16 +629,20 @@
 				D3EB97A32708D13200CFF38A /* User.swift in Sources */,
 				D3EB979F27086F3500CFF38A /* UIViewController + Extensions.swift in Sources */,
 				D3BF081C26FE4C0B0043B563 /* LoginRegisterViewModel.swift in Sources */,
+				D3B421022711EF6B000E6E08 /* AddProductDataManager.swift in Sources */,
 				D328D8F52704E587009D9F28 /* UserDataManager.swift in Sources */,
 				D328D8FA2704E6D6009D9F28 /* FirebaseUserDataManagerImp.swift in Sources */,
 				D32B187226F792DE0093EE46 /* Coordinator.swift in Sources */,
 				D328D8F82704E6B5009D9F28 /* FirebaseUserDataManager.swift in Sources */,
 				D3C1883C2711B55100505FC8 /* ProductsViewController.swift in Sources */,
 				D30B02AE26FA40D500D63CA8 /* NoUserView.swift in Sources */,
+				D3B420FC2711EF2E000E6E08 /* AddProductViewModel.swift in Sources */,
+				D3B420FF2711EF4A000E6E08 /* AddProductViewController.swift in Sources */,
 				D3EAAD982705BE3A002AF85F /* LoginRegisterDataManager.swift in Sources */,
 				D357E76326F8F51C00A8723F /* ProfileViewController.swift in Sources */,
 				D357E75826F8E4EE00A8723F /* ProfileCoordinator.swift in Sources */,
 				D3C188412711B5DF00505FC8 /* ProductsCoordinator.swift in Sources */,
+				D3B421042711F19F000E6E08 /* AddProductCoordinator.swift in Sources */,
 				D357E75026F8DE4100A8723F /* ProfileViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
