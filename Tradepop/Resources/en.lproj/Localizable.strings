@@ -10,6 +10,14 @@
 "generic_cancel" = "Cancel";
 "genering_send" = "Send";
 
+//Category
+"category_title" = "Category";
+"category_1" = "Vehicle";
+"category_2" = "Clothing";
+"category_3" = "Furniture";
+"category_4" = "Sports";
+"category_5" = "Electronics";
+
 //NoUserView
 "no_user_view_label_message" = "Looks like you haven't signed in yet.";
 "no_user_to_login_button_message" = "Sign in";
@@ -28,3 +36,13 @@
 "login_register_forgot_password_message" = "Write your email to reset your password";
 "login_register_email_invalid" = "This email doesn't exists or is invalid";
 "login_register_recover_password_email_sent" = "An email has been sent to reset your password";
+
+//AddProduct
+"add_product_title_label" = "Title*";
+"add_product_description_label" = "Description*";
+"add_product_category_label" = "Category*";
+"add_product_category_selected_label" = "Select a category";
+"add_product_price_label" = "Price*";
+"add_product_upload_button" = "Upload";
+"add_product_empty_fields_error_message" = "Fields can't be empty";
+"add_product_upload_product_error_message" = "An error has occurred please try again later";

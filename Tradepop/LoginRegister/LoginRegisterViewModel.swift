@@ -22,11 +22,9 @@ class LoginRegisterViewModel {
     weak var viewDelegate: LoginRegisterViewDelegate?
     
     let userDataManager: UserDataManager
-    let loginRegisterDataManager: LoginRegisterDataManager
     
-    init(userDataManager: UserDataManager, loginRegisterDataManager: LoginRegisterDataManager) {
+    init(userDataManager: UserDataManager) {
         self.userDataManager = userDataManager
-        self.loginRegisterDataManager = loginRegisterDataManager
     }
     
     func checkLoginFields(email: String?, password: String?) {

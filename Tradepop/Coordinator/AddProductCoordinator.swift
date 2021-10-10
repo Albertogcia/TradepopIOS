@@ -12,11 +12,13 @@ class AddProductCoordinator: Coordinator{
     let presenter: UINavigationController
     let userDataManager: UserDataManager
     let addProductDataManager: AddProductDataManager
+    let createProductCompletion: ()->()
     
-    init(presenter: UINavigationController, userDataManager: UserDataManager, addProductDataManager: AddProductDataManager) {
+    init(presenter: UINavigationController, userDataManager: UserDataManager, addProductDataManager: AddProductDataManager, createProductCompletion: @escaping () -> ()) {
         self.presenter = presenter
         self.userDataManager = userDataManager
         self.addProductDataManager = addProductDataManager
+        self.createProductCompletion = createProductCompletion
     }
     
     override func start() {
@@ -33,5 +35,13 @@ class AddProductCoordinator: Coordinator{
 }
 
 extension AddProductCoordinator: AddProductCoordinatorDelegate{
+    func loginButtonTapped() {
+        let loginRegisterCoordinator = LoginRegisterCoordinator(presenter: presenter, userDataManager: userDataManager)
+        addChildCoordinator(loginRegisterCoordinator)
+        loginRegisterCoordinator.start()
+    }
     
+    func goToProductsTab() {
+        createProductCompletion()
+    }
 }

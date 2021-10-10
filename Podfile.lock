@@ -257,6 +257,7 @@ PODS:
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
   - PromisesObjC (1.2.12)
+  - Toucan (1.1.0)
 
 DEPENDENCIES:
   - BoringSSL-GRPC (= 0.0.3)
@@ -265,6 +266,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - FirebaseFirestoreSwift
   - Kingfisher (~> 7.0)
+  - Toucan
 
 SPEC REPOS:
   trunk:
@@ -289,6 +291,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - Toucan
 
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
@@ -312,7 +315,8 @@ SPEC CHECKSUMS:
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  Toucan: 8f228fabb21521b9658692df9325fe76e71d74b2
 
-PODFILE CHECKSUM: bb723eda8dfca11fd5d198676fdb999788a01499
+PODFILE CHECKSUM: 01c095f855ff43e6813115c838abef7e10a315ee
 
 COCOAPODS: 1.11.2

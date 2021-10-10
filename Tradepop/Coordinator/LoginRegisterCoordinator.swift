@@ -9,17 +9,15 @@ import UIKit
 
 class LoginRegisterCoordinator: Coordinator{
     let presenter: UINavigationController
-    let loginRegisterDataManager: LoginRegisterDataManager
     let userDataManager: UserDataManager
     
-    init(presenter: UINavigationController, loginRegisterDataManager: LoginRegisterDataManager, userDataManager: UserDataManager) {
+    init(presenter: UINavigationController, userDataManager: UserDataManager) {
         self.presenter = presenter
-        self.loginRegisterDataManager = loginRegisterDataManager
         self.userDataManager = userDataManager
     }
     
     override func start() {
-        let loginRegisterViewModel = LoginRegisterViewModel(userDataManager: userDataManager, loginRegisterDataManager: loginRegisterDataManager)
+        let loginRegisterViewModel = LoginRegisterViewModel(userDataManager: userDataManager)
         let loginRegisterViewController = LoginRegisterViewController(viewModel: loginRegisterViewModel)
         loginRegisterViewModel.coordinatorDelegate = self
         loginRegisterViewModel.viewDelegate = loginRegisterViewController

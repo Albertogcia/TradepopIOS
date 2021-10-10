@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  Tradepop
+
+  Created by Alberto García Antuña on 10/10/21.
+  
+*/
+
+"NSPhotoLibraryUsageDescription" = "Necesitamos acceder a tu galería para seleccionar una foto";

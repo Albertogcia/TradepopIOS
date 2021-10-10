@@ -10,16 +10,16 @@ import UIKit
 class ProfileCoordinator: Coordinator {
     let presenter: UINavigationController
     let userDataManager: UserDataManager
-    let loginRegisterDataManager: LoginRegisterDataManager
+    let profileDataManager: ProfileDataManager
 
-    init(presenter: UINavigationController, userDataManager: UserDataManager, loginRegisterDataManager: LoginRegisterDataManager) {
+    init(presenter: UINavigationController, userDataManager: UserDataManager, profileDataManager: ProfileDataManager) {
         self.presenter = presenter
+        self.profileDataManager = profileDataManager
         self.userDataManager = userDataManager
-        self.loginRegisterDataManager = loginRegisterDataManager
     }
 
     override func start() {
-        let profileViewModel = ProfileViewModel(userDataManager: userDataManager)
+        let profileViewModel = ProfileViewModel(userDataManager: userDataManager, profileDataManager: profileDataManager)
         let profileViewController = ProfileViewController(viewModel: profileViewModel)
         profileViewModel.coordinatorDelegate = self
         profileViewModel.viewDelegate = profileViewController
@@ -33,7 +33,7 @@ class ProfileCoordinator: Coordinator {
 
 extension ProfileCoordinator: ProfileCoordinatorDelegate {
     func loginButtonTapped() {
-        let loginRegisterCoordinator = LoginRegisterCoordinator(presenter: presenter, loginRegisterDataManager: loginRegisterDataManager, userDataManager: userDataManager)
+        let loginRegisterCoordinator = LoginRegisterCoordinator(presenter: presenter, userDataManager: userDataManager)
         addChildCoordinator(loginRegisterCoordinator)
         loginRegisterCoordinator.start()
     }

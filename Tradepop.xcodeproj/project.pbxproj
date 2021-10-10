@@ -32,6 +32,9 @@
 		D357E75826F8E4EE00A8723F /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357E75726F8E4EE00A8723F /* ProfileCoordinator.swift */; };
 		D357E76326F8F51C00A8723F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357E76126F8F51C00A8723F /* ProfileViewController.swift */; };
 		D357E76426F8F51C00A8723F /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D357E76226F8F51C00A8723F /* ProfileViewController.xib */; };
+		D367A0832712EF1F002FF5BF /* TextFieldWithPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D367A0822712EF1F002FF5BF /* TextFieldWithPadding.swift */; };
+		D367A0862712F4E3002FF5BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D367A0882712F4E3002FF5BF /* InfoPlist.strings */; };
+		D367A08B2713259D002FF5BF /* ProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D367A08A2713259D002FF5BF /* ProfileDataManager.swift */; };
 		D3689FB327023BBB0052B003 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3689FB527023BBB0052B003 /* Localizable.strings */; };
 		D3B420FC2711EF2E000E6E08 /* AddProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B420FB2711EF2E000E6E08 /* AddProductViewModel.swift */; };
 		D3B420FF2711EF4A000E6E08 /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B420FD2711EF4A000E6E08 /* AddProductViewController.swift */; };
@@ -48,7 +51,6 @@
 		D3C1883D2711B55100505FC8 /* ProductsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3C1883B2711B55100505FC8 /* ProductsViewController.xib */; };
 		D3C1883F2711B5BA00505FC8 /* ProductsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1883E2711B5BA00505FC8 /* ProductsDataManager.swift */; };
 		D3C188412711B5DF00505FC8 /* ProductsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C188402711B5DF00505FC8 /* ProductsCoordinator.swift */; };
-		D3EAAD982705BE3A002AF85F /* LoginRegisterDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAAD972705BE3A002AF85F /* LoginRegisterDataManager.swift */; };
 		D3EAAD9A2705C255002AF85F /* FirebaseDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAAD992705C255002AF85F /* FirebaseDataManager.swift */; };
 		D3EAAD9C2705C265002AF85F /* FirebaseDataManagerImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAAD9B2705C265002AF85F /* FirebaseDataManagerImp.swift */; };
 		D3EB979F27086F3500CFF38A /* UIViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB979E27086F3500CFF38A /* UIViewController + Extensions.swift */; };
@@ -110,6 +112,10 @@
 		D357E75726F8E4EE00A8723F /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		D357E76126F8F51C00A8723F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D357E76226F8F51C00A8723F /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		D367A0822712EF1F002FF5BF /* TextFieldWithPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithPadding.swift; sourceTree = "<group>"; };
+		D367A0872712F4E3002FF5BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D367A0892712F4E7002FF5BF /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D367A08A2713259D002FF5BF /* ProfileDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataManager.swift; sourceTree = "<group>"; };
 		D3689FB427023BBB0052B003 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D3689FB627023BDF0052B003 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		D3689FB727023BE00052B003 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -128,7 +134,6 @@
 		D3C1883B2711B55100505FC8 /* ProductsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsViewController.xib; sourceTree = "<group>"; };
 		D3C1883E2711B5BA00505FC8 /* ProductsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsDataManager.swift; sourceTree = "<group>"; };
 		D3C188402711B5DF00505FC8 /* ProductsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCoordinator.swift; sourceTree = "<group>"; };
-		D3EAAD972705BE3A002AF85F /* LoginRegisterDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterDataManager.swift; sourceTree = "<group>"; };
 		D3EAAD992705C255002AF85F /* FirebaseDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataManager.swift; sourceTree = "<group>"; };
 		D3EAAD9B2705C265002AF85F /* FirebaseDataManagerImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataManagerImp.swift; sourceTree = "<group>"; };
 		D3EB979E27086F3500CFF38A /* UIViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extensions.swift"; sourceTree = "<group>"; };
@@ -196,7 +201,6 @@
 				D3BF081B26FE4C0B0043B563 /* LoginRegisterViewModel.swift */,
 				D3BF081D26FE4C5E0043B563 /* LoginRegisterViewController.swift */,
 				D3BF081E26FE4C5E0043B563 /* LoginRegisterViewController.xib */,
-				D3EAAD972705BE3A002AF85F /* LoginRegisterDataManager.swift */,
 			);
 			path = LoginRegister;
 			sourceTree = "<group>";
@@ -289,6 +293,7 @@
 				D32B184726F78DC10093EE46 /* Assets.xcassets */,
 				D32B184C26F78DC10093EE46 /* Info.plist */,
 				D3689FB527023BBB0052B003 /* Localizable.strings */,
+				D367A0882712F4E3002FF5BF /* InfoPlist.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -352,6 +357,7 @@
 				D357E74F26F8DE4100A8723F /* ProfileViewModel.swift */,
 				D357E76126F8F51C00A8723F /* ProfileViewController.swift */,
 				D357E76226F8F51C00A8723F /* ProfileViewController.xib */,
+				D367A08A2713259D002FF5BF /* ProfileDataManager.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -362,6 +368,7 @@
 				D357E74D26F8D44500A8723F /* UIColor+Extensions.swift */,
 				D3BDFAB827076C5800C88C7F /* UIView+Extensions.swift */,
 				D3EB979E27086F3500CFF38A /* UIViewController + Extensions.swift */,
+				D367A0822712EF1F002FF5BF /* TextFieldWithPadding.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -478,6 +485,7 @@
 				D30B02B526FA41B800D63CA8 /* SourceSansPro-Regular.ttf in Resources */,
 				D357E76426F8F51C00A8723F /* ProfileViewController.xib in Resources */,
 				D3B421002711EF4A000E6E08 /* AddProductViewController.xib in Resources */,
+				D367A0862712F4E3002FF5BF /* InfoPlist.strings in Resources */,
 				D32B184B26F78DC10093EE46 /* LaunchScreen.storyboard in Resources */,
 				D30B02B026FA40ED00D63CA8 /* NoUserView.xib in Resources */,
 				D3C1883D2711B55100505FC8 /* ProductsViewController.xib in Resources */,
@@ -634,11 +642,12 @@
 				D328D8FA2704E6D6009D9F28 /* FirebaseUserDataManagerImp.swift in Sources */,
 				D32B187226F792DE0093EE46 /* Coordinator.swift in Sources */,
 				D328D8F82704E6B5009D9F28 /* FirebaseUserDataManager.swift in Sources */,
+				D367A0832712EF1F002FF5BF /* TextFieldWithPadding.swift in Sources */,
 				D3C1883C2711B55100505FC8 /* ProductsViewController.swift in Sources */,
 				D30B02AE26FA40D500D63CA8 /* NoUserView.swift in Sources */,
+				D367A08B2713259D002FF5BF /* ProfileDataManager.swift in Sources */,
 				D3B420FC2711EF2E000E6E08 /* AddProductViewModel.swift in Sources */,
 				D3B420FF2711EF4A000E6E08 /* AddProductViewController.swift in Sources */,
-				D3EAAD982705BE3A002AF85F /* LoginRegisterDataManager.swift in Sources */,
 				D357E76326F8F51C00A8723F /* ProfileViewController.swift in Sources */,
 				D357E75826F8E4EE00A8723F /* ProfileCoordinator.swift in Sources */,
 				D3C188412711B5DF00505FC8 /* ProductsCoordinator.swift in Sources */,
@@ -686,6 +695,15 @@
 				D3689FB627023BDF0052B003 /* es */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D367A0882712F4E3002FF5BF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D367A0872712F4E3002FF5BF /* en */,
+				D367A0892712F4E7002FF5BF /* es */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		D3689FB527023BBB0052B003 /* Localizable.strings */ = {

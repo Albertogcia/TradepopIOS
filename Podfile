@@ -12,6 +12,7 @@ target 'Tradepop' do
 	pod 'FirebaseFirestoreSwift'
   pod 'Firebase/Storage'
   pod 'Kingfisher', '~> 7.0'
+  pod 'Toucan'
 
   target 'TradepopTests' do
     inherit! :search_paths

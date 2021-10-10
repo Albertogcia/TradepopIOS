@@ -42,13 +42,15 @@ class AppCoordinator: Coordinator {
         
         let addProductNavigationController = UINavigationController()
         addProductNavigationController.isNavigationBarHidden = true
-        let addProductCoordinator = AddProductCoordinator(presenter: addProductNavigationController, userDataManager: userDataManager, addProductDataManager: dataManager)
+        let addProductCoordinator = AddProductCoordinator(presenter: addProductNavigationController, userDataManager: userDataManager, addProductDataManager: dataManager){
+            tabBarController.selectedIndex = 0
+        }
         addChildCoordinator(addProductCoordinator)
         addProductCoordinator.start()
         
         let profileNavigationController = UINavigationController()
         profileNavigationController.isNavigationBarHidden = true
-        let profileCoordinator = ProfileCoordinator(presenter: profileNavigationController, userDataManager: userDataManager, loginRegisterDataManager: dataManager)
+        let profileCoordinator = ProfileCoordinator(presenter: profileNavigationController, userDataManager: userDataManager, profileDataManager: dataManager)
         addChildCoordinator(profileCoordinator)
         profileCoordinator.start()
 

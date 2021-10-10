@@ -20,9 +20,11 @@ class ProfileViewModel{
     weak var viewDelegate: ProfileViewDelegate?
     
     let userDataManager: UserDataManager
+    let profileDataManager: ProfileDataManager
     
-    init(userDataManager: UserDataManager){
+    init(userDataManager: UserDataManager, profileDataManager: ProfileDataManager){
         self.userDataManager = userDataManager
+        self.profileDataManager = profileDataManager
     }
     
     func viewWillAppear(){
