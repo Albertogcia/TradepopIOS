@@ -46,3 +46,6 @@
 "add_product_upload_button" = "Subir";
 "add_product_empty_fields_error_message" = "Los campos no pueden estar vacios";
 "add_product_upload_product_error_message" = "Se ha producido un error por favor intentalo más tarde";
+
+//Products
+"products_error_fetching_products" = "Se ha producido un error por favor intentalo más tarde";

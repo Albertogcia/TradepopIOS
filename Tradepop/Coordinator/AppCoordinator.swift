@@ -40,20 +40,21 @@ class AppCoordinator: Coordinator {
         addChildCoordinator(productsCoordinator)
         productsCoordinator.start()
         
-        let addProductNavigationController = UINavigationController()
-        addProductNavigationController.isNavigationBarHidden = true
-        let addProductCoordinator = AddProductCoordinator(presenter: addProductNavigationController, userDataManager: userDataManager, addProductDataManager: dataManager){
-            tabBarController.selectedIndex = 0
-        }
-        addChildCoordinator(addProductCoordinator)
-        addProductCoordinator.start()
-        
         let profileNavigationController = UINavigationController()
         profileNavigationController.isNavigationBarHidden = true
         let profileCoordinator = ProfileCoordinator(presenter: profileNavigationController, userDataManager: userDataManager, profileDataManager: dataManager)
         addChildCoordinator(profileCoordinator)
         profileCoordinator.start()
-
+        
+        let addProductNavigationController = UINavigationController()
+        addProductNavigationController.isNavigationBarHidden = true
+        let addProductCoordinator = AddProductCoordinator(presenter: addProductNavigationController, userDataManager: userDataManager, addProductDataManager: dataManager){
+            tabBarController.selectedIndex = 0
+            productsCoordinator.reloadProducs()
+        }
+        addChildCoordinator(addProductCoordinator)
+        addProductCoordinator.start()
+        
         tabBarController.viewControllers = [productsNavigationController, addProductNavigationController, profileNavigationController]
         
         tabBarController.tabBar.items?[0].image = UIImage(named: "icon_home")?.withTintColor(.primaryColor)

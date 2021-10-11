@@ -27,6 +27,10 @@ class ProfileCoordinator: Coordinator {
     }
 
     override func finish() {}
+    
+    func reloadProducts(){
+        
+    }
 }
 
 // MARK: - ProfileCoordinatorDelegate

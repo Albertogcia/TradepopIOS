@@ -22,6 +22,10 @@ extension DataManager: ProfileDataManager {
     }
 }
 
-extension DataManager: ProductsDataManager {}
+extension DataManager: ProductsDataManager {
+    func getAllProducts(completion: @escaping (Error?, [Product]?) -> ()) {
+        remoteDataManager.getAllProducts(completion: completion)
+    }
+}
 
 extension DataManager: AddProductDataManager {}

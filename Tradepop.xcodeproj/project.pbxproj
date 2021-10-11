@@ -35,7 +35,11 @@
 		D367A0832712EF1F002FF5BF /* TextFieldWithPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D367A0822712EF1F002FF5BF /* TextFieldWithPadding.swift */; };
 		D367A0862712F4E3002FF5BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D367A0882712F4E3002FF5BF /* InfoPlist.strings */; };
 		D367A08B2713259D002FF5BF /* ProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D367A08A2713259D002FF5BF /* ProfileDataManager.swift */; };
+		D367A08D2713535C002FF5BF /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D367A08C2713535C002FF5BF /* Product.swift */; };
 		D3689FB327023BBB0052B003 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3689FB527023BBB0052B003 /* Localizable.strings */; };
+		D3B338D027142A2700A4747D /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B338CE27142A2700A4747D /* ProductCell.swift */; };
+		D3B338D127142A2700A4747D /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B338CF27142A2700A4747D /* ProductCell.xib */; };
+		D3B338D32714312100A4747D /* ProductCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B338D22714312100A4747D /* ProductCellViewModel.swift */; };
 		D3B420FC2711EF2E000E6E08 /* AddProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B420FB2711EF2E000E6E08 /* AddProductViewModel.swift */; };
 		D3B420FF2711EF4A000E6E08 /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B420FD2711EF4A000E6E08 /* AddProductViewController.swift */; };
 		D3B421002711EF4A000E6E08 /* AddProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B420FE2711EF4A000E6E08 /* AddProductViewController.xib */; };
@@ -116,9 +120,13 @@
 		D367A0872712F4E3002FF5BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D367A0892712F4E7002FF5BF /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D367A08A2713259D002FF5BF /* ProfileDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataManager.swift; sourceTree = "<group>"; };
+		D367A08C2713535C002FF5BF /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		D3689FB427023BBB0052B003 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D3689FB627023BDF0052B003 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		D3689FB727023BE00052B003 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D3B338CE27142A2700A4747D /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		D3B338CF27142A2700A4747D /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
+		D3B338D22714312100A4747D /* ProductCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCellViewModel.swift; sourceTree = "<group>"; };
 		D3B420FB2711EF2E000E6E08 /* AddProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewModel.swift; sourceTree = "<group>"; };
 		D3B420FD2711EF4A000E6E08 /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
 		D3B420FE2711EF4A000E6E08 /* AddProductViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddProductViewController.xib; sourceTree = "<group>"; };
@@ -302,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				D3EB97A22708D13200CFF38A /* User.swift */,
+				D367A08C2713535C002FF5BF /* Product.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -322,6 +331,7 @@
 		D32B187526F79C370093EE46 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				D3B338CD271429D600A4747D /* Cells */,
 				D3C188382711B54400505FC8 /* ProductsViewModel.swift */,
 				D3C1883A2711B55100505FC8 /* ProductsViewController.swift */,
 				D3C1883B2711B55100505FC8 /* ProductsViewController.xib */,
@@ -371,6 +381,16 @@
 				D367A0822712EF1F002FF5BF /* TextFieldWithPadding.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		D3B338CD271429D600A4747D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D3B338CE27142A2700A4747D /* ProductCell.swift */,
+				D3B338CF27142A2700A4747D /* ProductCell.xib */,
+				D3B338D22714312100A4747D /* ProductCellViewModel.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -491,6 +511,7 @@
 				D3C1883D2711B55100505FC8 /* ProductsViewController.xib in Resources */,
 				D3689FB327023BBB0052B003 /* Localizable.strings in Resources */,
 				D32B184826F78DC10093EE46 /* Assets.xcassets in Resources */,
+				D3B338D127142A2700A4747D /* ProductCell.xib in Resources */,
 				D3BF082026FE4C5E0043B563 /* LoginRegisterViewController.xib in Resources */,
 				D3EB97A12708789C00CFF38A /* GoogleService-Info.plist in Resources */,
 				D30B02B626FA41B800D63CA8 /* SourceSansPro-Bold.ttf in Resources */,
@@ -631,13 +652,16 @@
 				D3EAAD9A2705C255002AF85F /* FirebaseDataManager.swift in Sources */,
 				D3C188392711B54400505FC8 /* ProductsViewModel.swift in Sources */,
 				D32B183F26F78DC00093EE46 /* AppDelegate.swift in Sources */,
+				D367A08D2713535C002FF5BF /* Product.swift in Sources */,
 				D3BF081F26FE4C5E0043B563 /* LoginRegisterViewController.swift in Sources */,
 				D357E74E26F8D44500A8723F /* UIColor+Extensions.swift in Sources */,
+				D3B338D027142A2700A4747D /* ProductCell.swift in Sources */,
 				D32B184126F78DC00093EE46 /* SceneDelegate.swift in Sources */,
 				D3EB97A32708D13200CFF38A /* User.swift in Sources */,
 				D3EB979F27086F3500CFF38A /* UIViewController + Extensions.swift in Sources */,
 				D3BF081C26FE4C0B0043B563 /* LoginRegisterViewModel.swift in Sources */,
 				D3B421022711EF6B000E6E08 /* AddProductDataManager.swift in Sources */,
+				D3B338D32714312100A4747D /* ProductCellViewModel.swift in Sources */,
 				D328D8F52704E587009D9F28 /* UserDataManager.swift in Sources */,
 				D328D8FA2704E6D6009D9F28 /* FirebaseUserDataManagerImp.swift in Sources */,
 				D32B187226F792DE0093EE46 /* Coordinator.swift in Sources */,

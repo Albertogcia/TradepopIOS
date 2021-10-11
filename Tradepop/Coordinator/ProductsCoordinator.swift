@@ -13,14 +13,16 @@ class ProductsCoordinator: Coordinator{
     let userDataManager: UserDataManager
     let productsDataManager: ProductsDataManager
     
+    let productsViewModel: ProductsViewModel
+    
     init(presenter: UINavigationController, userDataManager: UserDataManager, productsDataManager: ProductsDataManager) {
         self.presenter = presenter
         self.userDataManager = userDataManager
         self.productsDataManager = productsDataManager
+        self.productsViewModel = ProductsViewModel(userDataManager: userDataManager, productsDataManager: productsDataManager)
     }
     
     override func start() {
-        let productsViewModel = ProductsViewModel(userDataManager: userDataManager, productsDataManager: productsDataManager)
         let producsViewController = ProductsViewController(viewModel: productsViewModel)
         productsViewModel.coordinatorDelegate = self
         productsViewModel.viewDelegate = producsViewController
@@ -29,6 +31,10 @@ class ProductsCoordinator: Coordinator{
     
     override func finish() {
         
+    }
+    
+    func reloadProducs(){
+        productsViewModel.getAllProducts()
     }
     
 }
