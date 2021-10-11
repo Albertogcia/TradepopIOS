@@ -58,17 +58,27 @@ class FirebaseDataManagerImp: FirebaseDataManager {
                 if let snapshot = snapshot {
                     var products: [Product] = []
                     products = snapshot.documents.map { document in
-                        let documentData = document.data()
-                        let documentUuid = document.documentID
-                        let title = documentData["title"] as? String
-                        let description = documentData["description"] as? String
-                        let price = documentData["price"] as? Double
-                        let categoryId = documentData["categoryId"] as? Int
-                        let ownerUuid = documentData["owner"] as? String
-                        let ownerName = documentData["ownerName"] as? String
-                        let date = (documentData["date"] as? Timestamp)?.dateValue()
-                        let coverImageUrl = documentData["coverImageUrl"] as? String
-                        return Product(uuid: documentUuid, title: title, description: description, price: price, categoryId: categoryId, ownerUuid: ownerUuid, ownerName: ownerName, date: date, coverImageUrl: coverImageUrl)
+                        return Product.parseDataFromFirebase(document: document)
+                    }
+                    completion(nil, products)
+                }
+                else {
+                    completion(error, nil)
+                }
+            }
+            else {
+                completion(error, nil)
+            }
+        }
+    }
+    
+    func getUserProducts(userUuid: String, completion: @escaping (Error?, [Product]?) -> ()) {
+        db.collection(PRODUCTS_COLLECTION_KEY).whereField("owner", isEqualTo: userUuid).order(by: "date", descending: true).getDocuments { snapshot, error in
+            if error == nil {
+                if let snapshot = snapshot {
+                    var products: [Product] = []
+                    products = snapshot.documents.map { document in
+                        return Product.parseDataFromFirebase(document: document)
                     }
                     completion(nil, products)
                 }

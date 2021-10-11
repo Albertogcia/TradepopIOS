@@ -17,8 +17,8 @@ class DataManager {
 }
 
 extension DataManager: ProfileDataManager {
-    func createNewProduct(imageData: Data, title: String, description: String, categoryId: Int, price: Double, userUuid: String, userName: String, completion: @escaping (Error?) -> ()) {
-        remoteDataManager.createNewProduct(imageData: imageData, title: title, description: description, categoryId: categoryId, price: price, userUuid: userUuid, userName: userName, completion: completion)
+    func getUserProducts(userUuid: String, completion: @escaping (Error?, [Product]?) -> ()) {
+        remoteDataManager.getUserProducts(userUuid: userUuid, completion: completion)
     }
 }
 
@@ -28,4 +28,8 @@ extension DataManager: ProductsDataManager {
     }
 }
 
-extension DataManager: AddProductDataManager {}
+extension DataManager: AddProductDataManager {
+    func createNewProduct(imageData: Data, title: String, description: String, categoryId: Int, price: Double, userUuid: String, userName: String, completion: @escaping (Error?) -> ()) {
+        remoteDataManager.createNewProduct(imageData: imageData, title: title, description: description, categoryId: categoryId, price: price, userUuid: userUuid, userName: userName, completion: completion)
+    }
+}

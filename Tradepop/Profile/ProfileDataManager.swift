@@ -9,4 +9,6 @@ import Foundation
 
 protocol ProfileDataManager{
     
+    func getUserProducts(userUuid: String, completion: @escaping (Error?,[Product]?) -> ())
+    
 }

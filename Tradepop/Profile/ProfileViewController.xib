@@ -9,11 +9,19 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceSansPro-SemiBold.ttf">
+            <string>SourceSansPro-SemiBold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="Tradepop" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicatorView" destination="WXY-jU-ziF" id="eDV-f2-eDI"/>
+                <outlet property="collectionView" destination="ESC-FQ-rol" id="HIU-HR-VLP"/>
                 <outlet property="mainView" destination="rup-IP-cef" id="4SP-JB-dOk"/>
                 <outlet property="noUserView" destination="hzk-b3-Wuw" id="Tpb-Ed-eW6"/>
+                <outlet property="userNameLabel" destination="Q1H-e2-nBF" id="JTW-FC-P3w"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -33,21 +41,96 @@
                         <constraint firstAttribute="height" constant="74" id="QNc-ld-1RD"/>
                     </constraints>
                 </view>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rup-IP-cef" userLabel="mainView">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rup-IP-cef" userLabel="mainView">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vvc-UZ-57M">
-                            <rect key="frame" x="183" y="394" width="48" height="30"/>
-                            <state key="normal" title="Logout"/>
-                            <connections>
-                                <action selector="logout:" destination="-1" eventType="touchUpInside" id="2I1-Oe-mqt"/>
-                            </connections>
-                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vuh-3K-APK">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_no_user_image" translatesAutoresizingMaskIntoConstraints="NO" id="T0J-GU-ADG">
+                                    <rect key="frame" x="16" y="10" width="40" height="40"/>
+                                    <color key="tintColor" name="secondaryColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="NEq-TH-vYd"/>
+                                        <constraint firstAttribute="width" constant="40" id="oH1-xg-uJ8"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alberto García Antuña" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1H-e2-nBF">
+                                    <rect key="frame" x="64" y="29.5" width="293" height="20.5"/>
+                                    <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="16"/>
+                                    <color key="textColor" name="secondaryColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePo-jf-g7t">
+                                    <rect key="frame" x="373" y="17.5" width="25" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="25" id="LaF-aD-qmg"/>
+                                        <constraint firstAttribute="height" constant="25" id="vBU-SW-g08"/>
+                                    </constraints>
+                                    <color key="tintColor" name="secondaryColor"/>
+                                    <state key="normal" image="icon_log_out"/>
+                                    <connections>
+                                        <action selector="logoutButtonTapped:" destination="-1" eventType="touchUpInside" id="las-G8-W7L"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" name="primaryColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="ePo-jf-g7t" secondAttribute="trailing" constant="16" id="3kY-0y-Rgb"/>
+                                <constraint firstItem="T0J-GU-ADG" firstAttribute="leading" secondItem="vuh-3K-APK" secondAttribute="leading" constant="16" id="6f1-I1-UDa"/>
+                                <constraint firstItem="ePo-jf-g7t" firstAttribute="leading" secondItem="Q1H-e2-nBF" secondAttribute="trailing" constant="16" id="IU8-WP-r6u"/>
+                                <constraint firstItem="Q1H-e2-nBF" firstAttribute="leading" secondItem="T0J-GU-ADG" secondAttribute="trailing" constant="8" id="NaN-oQ-Yfy"/>
+                                <constraint firstItem="T0J-GU-ADG" firstAttribute="centerY" secondItem="vuh-3K-APK" secondAttribute="centerY" id="gTD-dU-Fpt"/>
+                                <constraint firstItem="Q1H-e2-nBF" firstAttribute="bottom" secondItem="T0J-GU-ADG" secondAttribute="baseline" id="koz-e4-pr2"/>
+                                <constraint firstItem="ePo-jf-g7t" firstAttribute="centerY" secondItem="vuh-3K-APK" secondAttribute="centerY" id="rbQ-zP-OBr"/>
+                                <constraint firstAttribute="height" constant="60" id="twX-i0-hNh"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mis productos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ok-2u-uTv">
+                            <rect key="frame" x="16" y="76" width="382" height="20.5"/>
+                            <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="16"/>
+                            <color key="textColor" name="primaryColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wrE-6m-rRI">
+                            <rect key="frame" x="16" y="100.5" width="382" height="1"/>
+                            <color key="backgroundColor" name="secondaryColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="9ua-Y3-Rde"/>
+                            </constraints>
+                        </view>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ESC-FQ-rol">
+                            <rect key="frame" x="14" y="101.5" width="386" height="716.5"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Aas-Iu-b9G">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="14" maxX="0.0" maxY="14"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="WXY-jU-ziF">
+                            <rect key="frame" x="188.5" y="441.5" width="37" height="37"/>
+                            <color key="color" name="primaryColor"/>
+                        </activityIndicatorView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="Vvc-UZ-57M" firstAttribute="centerX" secondItem="rup-IP-cef" secondAttribute="centerX" id="3UI-aF-qXi"/>
-                        <constraint firstItem="Vvc-UZ-57M" firstAttribute="centerY" secondItem="rup-IP-cef" secondAttribute="centerY" id="sY7-Lk-TkH"/>
+                        <constraint firstAttribute="trailing" secondItem="vuh-3K-APK" secondAttribute="trailing" id="Epb-Ui-iBd"/>
+                        <constraint firstItem="wrE-6m-rRI" firstAttribute="top" secondItem="1ok-2u-uTv" secondAttribute="bottom" constant="4" id="GxL-dR-GBX"/>
+                        <constraint firstItem="vuh-3K-APK" firstAttribute="leading" secondItem="rup-IP-cef" secondAttribute="leading" id="I55-uI-rRb"/>
+                        <constraint firstItem="ESC-FQ-rol" firstAttribute="leading" secondItem="rup-IP-cef" secondAttribute="leading" constant="14" id="ITK-Zg-ttS"/>
+                        <constraint firstAttribute="trailing" secondItem="wrE-6m-rRI" secondAttribute="trailing" constant="16" id="IbL-zu-Qvh"/>
+                        <constraint firstAttribute="trailing" secondItem="1ok-2u-uTv" secondAttribute="trailing" constant="16" id="Kv4-xv-yz8"/>
+                        <constraint firstItem="WXY-jU-ziF" firstAttribute="centerX" secondItem="ESC-FQ-rol" secondAttribute="centerX" id="QwW-5s-kg9"/>
+                        <constraint firstItem="ESC-FQ-rol" firstAttribute="top" secondItem="wrE-6m-rRI" secondAttribute="bottom" id="Tio-u7-D4K"/>
+                        <constraint firstItem="vuh-3K-APK" firstAttribute="top" secondItem="rup-IP-cef" secondAttribute="top" id="cFl-xp-O8g"/>
+                        <constraint firstItem="1ok-2u-uTv" firstAttribute="leading" secondItem="rup-IP-cef" secondAttribute="leading" constant="16" id="cg0-qH-4xj"/>
+                        <constraint firstAttribute="bottom" secondItem="ESC-FQ-rol" secondAttribute="bottom" id="eWi-2R-K8X"/>
+                        <constraint firstAttribute="trailing" secondItem="ESC-FQ-rol" secondAttribute="trailing" constant="14" id="qyO-hY-zYP"/>
+                        <constraint firstItem="wrE-6m-rRI" firstAttribute="leading" secondItem="rup-IP-cef" secondAttribute="leading" constant="16" id="sZe-2Y-0mF"/>
+                        <constraint firstItem="WXY-jU-ziF" firstAttribute="centerY" secondItem="ESC-FQ-rol" secondAttribute="centerY" id="woR-KD-iAh"/>
+                        <constraint firstItem="1ok-2u-uTv" firstAttribute="top" secondItem="vuh-3K-APK" secondAttribute="bottom" constant="16" id="yGb-Jx-jiz"/>
                     </constraints>
                 </view>
             </subviews>
@@ -70,8 +153,13 @@
         </view>
     </objects>
     <resources>
+        <image name="icon_log_out" width="24" height="24"/>
+        <image name="icon_no_user_image" width="512" height="512"/>
         <namedColor name="primaryColor">
             <color red="0.22352941176470589" green="0.24313725490196078" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="secondaryColor">
+            <color red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

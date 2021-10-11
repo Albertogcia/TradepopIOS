@@ -13,4 +13,6 @@ protocol FirebaseDataManager{
     
     func getAllProducts(completion: @escaping (Error?, [Product]?) -> ())
     
+    func getUserProducts(userUuid: String, completion: @escaping (Error?, [Product]?) -> ())
+    
 }

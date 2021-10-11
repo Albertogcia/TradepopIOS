@@ -11,15 +11,17 @@ class ProfileCoordinator: Coordinator {
     let presenter: UINavigationController
     let userDataManager: UserDataManager
     let profileDataManager: ProfileDataManager
+    
+    let profileViewModel: ProfileViewModel
 
     init(presenter: UINavigationController, userDataManager: UserDataManager, profileDataManager: ProfileDataManager) {
         self.presenter = presenter
         self.profileDataManager = profileDataManager
         self.userDataManager = userDataManager
+        self.profileViewModel = ProfileViewModel(userDataManager: userDataManager, profileDataManager: profileDataManager)
     }
 
     override func start() {
-        let profileViewModel = ProfileViewModel(userDataManager: userDataManager, profileDataManager: profileDataManager)
         let profileViewController = ProfileViewController(viewModel: profileViewModel)
         profileViewModel.coordinatorDelegate = self
         profileViewModel.viewDelegate = profileViewController
@@ -29,7 +31,7 @@ class ProfileCoordinator: Coordinator {
     override func finish() {}
     
     func reloadProducts(){
-        
+        profileViewModel.getUserProducts()
     }
 }
 
