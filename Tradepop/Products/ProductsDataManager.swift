@@ -9,5 +9,5 @@ import Foundation
 
 protocol ProductsDataManager{
     
-    func getAllProducts(completion: @escaping (Error?, [Product]?) -> ())
+    func getAllProducts(userUuid: String?, completion: @escaping (Error?, [Product]?) -> ())
 }

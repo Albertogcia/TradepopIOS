@@ -53,8 +53,12 @@ class FirebaseDataManagerImp: FirebaseDataManager {
         }
     }
 
-    func getAllProducts(completion: @escaping (Error?, [Product]?) -> ()) {
-        db.collection(PRODUCTS_COLLECTION_KEY).order(by: "date", descending: true).getDocuments { snapshot, error in
+    func getAllProducts(userUuid: String?, completion: @escaping (Error?, [Product]?) -> ()) {
+        var query = db.collection(PRODUCTS_COLLECTION_KEY).order(by: "date", descending: true)
+        if let userUuid = userUuid{
+            query = db.collection(PRODUCTS_COLLECTION_KEY).whereField("owner", isNotEqualTo: userUuid).order(by: "owner", descending: true).order(by: "date", descending: true)
+        }
+        query.getDocuments { snapshot, error in
             if error == nil {
                 if let snapshot = snapshot {
                     var products: [Product] = []

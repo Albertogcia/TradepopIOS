@@ -32,13 +32,13 @@ class ProductsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-        viewModel.getAllProducts()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         let backBarButtton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backBarButtton
         navigationItem.backBarButtonItem?.tintColor = .secondaryColor
+        viewModel.viewWillAppear()
     }
 
     @available(*, unavailable)

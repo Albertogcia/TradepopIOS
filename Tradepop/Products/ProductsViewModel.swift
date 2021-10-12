@@ -28,14 +28,36 @@ class ProductsViewModel {
     var filteredProductViewModels: [ProductCellViewModel] = []
     
     var textToFilter: String = ""
+    var previousUserUuid: String? = nil
     
     init(userDataManager: UserDataManager, productsDataManager: ProductsDataManager) {
         self.userDataManager = userDataManager
         self.productsDataManager = productsDataManager
     }
     
+    func viewWillAppear(){
+        userDataManager.getCurrentUser { user in
+            if let user = user{
+                if let previousUserUuid = self.previousUserUuid{
+                    if previousUserUuid != user.uuid{
+                        self.previousUserUuid = user.uuid
+                        self.getAllProducts()
+                    }
+                }
+                else{
+                    self.previousUserUuid = user.uuid
+                    self.getAllProducts()
+                }
+            }
+            else{
+                self.previousUserUuid = nil
+                self.getAllProducts()
+            }
+        }
+    }
+    
     func getAllProducts() {
-        productsDataManager.getAllProducts { [weak self] error, products in
+        productsDataManager.getAllProducts(userUuid: previousUserUuid) { [weak self] error, products in
             guard let self = self else { return }
             if error == nil, let products = products {
                 self.productViewModels = products.map { product in

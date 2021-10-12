@@ -50,7 +50,6 @@ class AppCoordinator: Coordinator {
         addProductNavigationController.isNavigationBarHidden = true
         let addProductCoordinator = AddProductCoordinator(presenter: addProductNavigationController, userDataManager: userDataManager, addProductDataManager: dataManager) {
             tabBarController.selectedIndex = 0
-            productsCoordinator.reloadProducs()
             profileCoordinator.reloadProducts()
         }
         addChildCoordinator(addProductCoordinator)
