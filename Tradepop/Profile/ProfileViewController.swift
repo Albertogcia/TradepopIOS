@@ -45,6 +45,9 @@ class ProfileViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        let backBarButtton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backBarButtton
+        navigationItem.backBarButtonItem?.tintColor = .secondaryColor
         viewModel.viewWillAppear()
     }
 
@@ -94,6 +97,10 @@ extension ProfileViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return CGFloat(14)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.viewModel.didSelectItem(at: indexPath)
     }
 }
 

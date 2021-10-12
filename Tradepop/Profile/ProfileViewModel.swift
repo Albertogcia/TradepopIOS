@@ -9,6 +9,7 @@ import Foundation
 
 protocol ProfileCoordinatorDelegate: AnyObject {
     func loginButtonTapped()
+    func toProductDetails(product: Product)
 }
 
 protocol ProfileViewDelegate: AnyObject{
@@ -88,5 +89,10 @@ class ProfileViewModel{
     func viewModel(at indexPath: IndexPath) -> ProductCellViewModel? {
         guard indexPath.row < productViewModels.count else { return nil }
         return productViewModels[indexPath.row]
+    }
+    
+    func didSelectItem(at indexPath: IndexPath){
+        guard indexPath.row < productViewModels.count else { return }
+        self.coordinatorDelegate?.toProductDetails(product: productViewModels[indexPath.row].product)
     }
 }

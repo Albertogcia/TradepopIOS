@@ -40,6 +40,13 @@ extension UIViewController {
         alert.addAction(UIAlertAction(title: buttonMessage ?? NSLocalizedString("generic_ok", comment: ""), style: .default, handler: handler))
         self.present(alert, animated: true)
     }
+    
+    func showDeleteAlert(title: String?, message: String?, deleteButtonMessage: String?, cancelButtonMessage: String?, deleteHandler: ((UIAlertAction) -> Void)?){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: cancelButtonMessage, style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: deleteButtonMessage, style: .destructive, handler: deleteHandler))
+        self.present(alert, animated: true)
+    }
 
     func showTextFieldAlert(title: String? = nil,
                             message: String? = nil,

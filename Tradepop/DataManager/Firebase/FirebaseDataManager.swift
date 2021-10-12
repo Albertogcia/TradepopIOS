@@ -15,4 +15,11 @@ protocol FirebaseDataManager{
     
     func getUserProducts(userUuid: String, completion: @escaping (Error?, [Product]?) -> ())
     
+    func deleteProduct(uuid: String, completion: @escaping (Error?) -> ())
+    
+    func buyProduct(productUuid: String, buyerUuid: String, buyerName: String,  sellerUuid: String, sellerName: String, price: Double, productName: String, completion: @escaping (Error?) -> ())
+    
+    func updateImage(imageData: Data, completion: @escaping (String?, Error?) -> ())
+    
+    func updateProduct(productUuid: String, title: String, description: String, price: Double, categoryId: Int, coverImageUrl: String, completion: @escaping (Error?) -> ())
 }

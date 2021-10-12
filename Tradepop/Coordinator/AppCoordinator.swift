@@ -36,19 +36,19 @@ class AppCoordinator: Coordinator {
 
         let productsNavigationController = UINavigationController()
         productsNavigationController.isNavigationBarHidden = true
-        let productsCoordinator = ProductsCoordinator(presenter: productsNavigationController, userDataManager: userDataManager, productsDataManager: dataManager)
+        let productsCoordinator = ProductsCoordinator(presenter: productsNavigationController, userDataManager: userDataManager, productsDataManager: dataManager, productDetailsDataManager: dataManager)
         addChildCoordinator(productsCoordinator)
         productsCoordinator.start()
         
         let profileNavigationController = UINavigationController()
         profileNavigationController.isNavigationBarHidden = true
-        let profileCoordinator = ProfileCoordinator(presenter: profileNavigationController, userDataManager: userDataManager, profileDataManager: dataManager)
+        let profileCoordinator = ProfileCoordinator(presenter: profileNavigationController, userDataManager: userDataManager, profileDataManager: dataManager, productDetailsDataManager: dataManager)
         addChildCoordinator(profileCoordinator)
         profileCoordinator.start()
         
         let addProductNavigationController = UINavigationController()
         addProductNavigationController.isNavigationBarHidden = true
-        let addProductCoordinator = AddProductCoordinator(presenter: addProductNavigationController, userDataManager: userDataManager, addProductDataManager: dataManager){
+        let addProductCoordinator = AddProductCoordinator(presenter: addProductNavigationController, userDataManager: userDataManager, addProductDataManager: dataManager) {
             tabBarController.selectedIndex = 0
             productsCoordinator.reloadProducs()
             profileCoordinator.reloadProducts()

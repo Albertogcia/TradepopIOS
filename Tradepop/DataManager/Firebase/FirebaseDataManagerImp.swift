@@ -9,6 +9,7 @@ import Firebase
 import Foundation
 
 private let PRODUCTS_COLLECTION_KEY = "products"
+private let TRANSACTIONS_COLLECTION_KEY = "transactions"
 
 class FirebaseDataManagerImp: FirebaseDataManager {
 
@@ -58,7 +59,7 @@ class FirebaseDataManagerImp: FirebaseDataManager {
                 if let snapshot = snapshot {
                     var products: [Product] = []
                     products = snapshot.documents.map { document in
-                        return Product.parseDataFromFirebase(document: document)
+                        Product.parseDataFromFirebase(document: document)
                     }
                     completion(nil, products)
                 }
@@ -71,14 +72,14 @@ class FirebaseDataManagerImp: FirebaseDataManager {
             }
         }
     }
-    
+
     func getUserProducts(userUuid: String, completion: @escaping (Error?, [Product]?) -> ()) {
         db.collection(PRODUCTS_COLLECTION_KEY).whereField("owner", isEqualTo: userUuid).order(by: "date", descending: true).getDocuments { snapshot, error in
             if error == nil {
                 if let snapshot = snapshot {
                     var products: [Product] = []
                     products = snapshot.documents.map { document in
-                        return Product.parseDataFromFirebase(document: document)
+                        Product.parseDataFromFirebase(document: document)
                     }
                     completion(nil, products)
                 }
@@ -89,6 +90,65 @@ class FirebaseDataManagerImp: FirebaseDataManager {
             else {
                 completion(error, nil)
             }
+        }
+    }
+
+    func deleteProduct(uuid: String, completion: @escaping (Error?) -> ()) {
+        db.collection(PRODUCTS_COLLECTION_KEY).document(uuid).delete() { error in
+            completion(error)
+        }
+    }
+
+    func buyProduct(productUuid: String, buyerUuid: String, buyerName: String, sellerUuid: String, sellerName: String, price: Double, productName: String, completion: @escaping (Error?) -> ()) {
+        db.collection(TRANSACTIONS_COLLECTION_KEY).addDocument(data: [
+            "buyerUuid": buyerUuid,
+            "buyerName": buyerName,
+            "sellerUuid": sellerUuid,
+            "sellerName": sellerName,
+            "price": price,
+            "productName": productName,
+            "date": Date()
+        ]) { error in
+            if error == nil {
+                self.db.collection(PRODUCTS_COLLECTION_KEY).document(productUuid).delete() { error in
+                    completion(error)
+                }
+            }
+            else {
+                completion(error)
+            }
+        }
+    }
+
+    func updateImage(imageData: Data, completion: @escaping (String?, Error?) -> ()) {
+        let uuid = UUID().uuidString.lowercased().appending(".jpeg")
+        let imageRef = storageReference.child(uuid)
+        imageRef.putData(imageData, metadata: nil) { _, error in
+            if error == nil {
+                imageRef.downloadURL { url, error in
+                    if let url = url {
+                        completion(url.absoluteString, error)
+                    }
+                    else {
+                        completion(nil, error)
+                    }
+                }
+            }
+            else {
+                completion(nil, error)
+            }
+        }
+    }
+
+    func updateProduct(productUuid: String, title: String, description: String, price: Double, categoryId: Int, coverImageUrl: String, completion: @escaping (Error?) -> ()) {
+        db.collection(PRODUCTS_COLLECTION_KEY).document(productUuid).setData([
+            "title": title,
+            "description": description,
+            "price": price,
+            "categoryId": categoryId,
+            "coverImageUrl": coverImageUrl
+        ], merge: true) { error in
+            completion(error)
         }
     }
 }

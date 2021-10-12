@@ -54,9 +54,15 @@ class LoginRegisterViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         configureView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.tabBarController?.tabBar.isHidden = true
+    }
         
     override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self)
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     // MARK: - Functions

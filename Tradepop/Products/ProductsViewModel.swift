@@ -7,16 +7,16 @@
 
 import Foundation
 
-protocol ProductsCoordinatorDelegate: AnyObject{
-    
+protocol ProductsCoordinatorDelegate: AnyObject {
+    func toProductDetails(product: Product)
 }
 
-protocol ProductsViewDelegate: AnyObject{
+protocol ProductsViewDelegate: AnyObject {
     func productsFetched()
     func showErrorMessage(message: String)
 }
 
-class ProductsViewModel{
+class ProductsViewModel {
     
     weak var coordinatorDelegate: ProductsCoordinatorDelegate?
     weak var viewDelegate: ProductsViewDelegate?
@@ -34,48 +34,53 @@ class ProductsViewModel{
         self.productsDataManager = productsDataManager
     }
     
-    func getAllProducts(){
+    func getAllProducts() {
         productsDataManager.getAllProducts { [weak self] error, products in
             guard let self = self else { return }
-            if error == nil, let products = products{
-                self.productViewModels = products.map({ product in
-                    return ProductCellViewModel(product: product)
-                })
+            if error == nil, let products = products {
+                self.productViewModels = products.map { product in
+                    ProductCellViewModel(product: product)
+                }
                 self.filterProducts()
             }
-            else{
+            else {
                 self.viewDelegate?.showErrorMessage(message: NSLocalizedString("products_error_fetching_products", comment: ""))
             }
         }
     }
     
-    func setTextToFilter(textToFilter: String){
+    func setTextToFilter(textToFilter: String) {
         self.textToFilter = textToFilter.lowercased()
         filterProducts()
     }
     
-    func filterProducts(){
-        if !textToFilter.isEmpty{
-            self.filteredProductViewModels = productViewModels.filter({
-                return $0.product.title?.lowercased().contains(textToFilter) ?? false || $0.product.description?.lowercased().contains(textToFilter) ?? false
-            })
+    func filterProducts() {
+        if !textToFilter.isEmpty {
+            filteredProductViewModels = productViewModels.filter {
+                $0.product.title?.lowercased().contains(textToFilter) ?? false || $0.product.description?.lowercased().contains(textToFilter) ?? false
+            }
         }
-        else{
-            self.filteredProductViewModels = productViewModels
+        else {
+            filteredProductViewModels = productViewModels
         }
-        self.viewDelegate?.productsFetched()
+        viewDelegate?.productsFetched()
     }
     
     func numberOfSections() -> Int {
         return 1
     }
     
-    func numberOfItems(in section: Int) -> Int{
+    func numberOfItems(in section: Int) -> Int {
         return filteredProductViewModels.count
     }
     
     func viewModel(at indexPath: IndexPath) -> ProductCellViewModel? {
         guard indexPath.row < filteredProductViewModels.count else { return nil }
         return filteredProductViewModels[indexPath.row]
+    }
+    
+    func didSelectItem(at indexPath: IndexPath) {
+        guard indexPath.row < filteredProductViewModels.count else { return }
+        coordinatorDelegate?.toProductDetails(product: filteredProductViewModels[indexPath.row].product)
     }
 }

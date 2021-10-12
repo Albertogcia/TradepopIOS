@@ -34,6 +34,12 @@ class ProductsViewController: UIViewController {
         configureView()
         viewModel.getAllProducts()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let backBarButtton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backBarButtton
+        navigationItem.backBarButtonItem?.tintColor = .secondaryColor
+    }
 
     @available(*, unavailable)
     required init?(coder: NSCoder) {
@@ -79,6 +85,10 @@ extension ProductsViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return CGFloat(14)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.viewModel.didSelectItem(at: indexPath)
     }
 }
 

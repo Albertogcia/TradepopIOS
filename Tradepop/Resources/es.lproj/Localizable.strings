@@ -9,6 +9,7 @@
 "generic_ok" = "Ok";
 "generic_cancel" = "Cancelar";
 "genering_send" = "Enviar";
+"generic_delete" = "Borrar";
 
 //Category
 "category_title" = "Categoría";
@@ -45,7 +46,20 @@
 "add_product_price_label" = "Precio*";
 "add_product_upload_button" = "Subir";
 "add_product_empty_fields_error_message" = "Los campos no pueden estar vacios";
-"add_product_upload_product_error_message" = "Se ha producido un error por favor intentalo más tarde";
+"add_product_upload_product_error_message" = "Se ha producido un error por favor inténtalo más tarde";
 
 //Products
-"products_error_fetching_products" = "Se ha producido un error por favor intentalo más tarde";
+"products_error_fetching_products" = "Se ha producido un error por favor inténtalo más tarde";
+
+//ProductDetails
+"product_details_title_label" = "Título";
+"product_details_description_label" = "Descripción";
+"product_details_category_label" = "Categoría";
+"product_details_price_label" = "Precio";
+"product_details_buy_button" = "Comprar";
+"product_details_edit_button" = "Editar";
+"product_details_delete_button" = "Borrar";
+"product_details_empty_fields_error_message" = "Los campos no pueden estar vacios";
+"product_details_upload_product_error_message" = "Se ha producido un error por favor inténtalo más tarde";
+"product_details_delete_product_title" = "Borrar producto";
+"product_details_delete_product_message" = "¿Estas seguro de que quieres borrar este producto?";
