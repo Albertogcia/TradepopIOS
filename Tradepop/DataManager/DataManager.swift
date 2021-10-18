@@ -71,3 +71,10 @@ extension DataManager: FavoritesDataManager {
         remoteDataManager.getProductsFromUserFavorites(userUuid: userUuid, completion: completion)
     }
 }
+
+extension DataManager: TransactionsDataManager {
+
+    func getUserTransactions(userUuid: String, completion: @escaping (Error?, [Transaction]?) -> ()) {
+        remoteDataManager.getUserTransactions(userUuid: userUuid, completion: completion)
+    }
+}

@@ -116,8 +116,7 @@ extension FavoritesViewController: FavoritesViewDelegate {
         if user != nil {
             noUserView.isHidden = true
             mainView.isHidden = false
-            collectionView.reloadData()
-            activityIndicatorView.isHidden = false
+            activityIndicatorView.isHidden = true
         }
         else {
             mainView.isHidden = true

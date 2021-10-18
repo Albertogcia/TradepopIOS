@@ -30,4 +30,6 @@ protocol FirebaseDataManager{
     func removeFromFavorites(productUuid: String, userUuid: String, completion: @escaping (Error?) -> ())
     
     func getUserFavorites() -> [String]
+    
+    func getUserTransactions(userUuid: String, completion: @escaping (Error?, [Transaction]?) -> ())
 }

@@ -38,10 +38,10 @@ class FavoritesViewModel {
         userDataManager.getCurrentUser { [weak self] user in
             guard let self = self else { return }
             if let user = user {
+                self.viewDelegate?.updateView(user: user)
                 if self.previousUserUuid != user.uuid {
                     self.previousUserUuid = user.uuid
                     self.productViewModels = []
-                    self.viewDelegate?.updateView(user: user)
                     self.getFavoriteProducts()
                 }
             }

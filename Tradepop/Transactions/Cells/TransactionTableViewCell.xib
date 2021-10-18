@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceSansPro-Bold.ttf">
+            <string>SourceSansPro-Bold</string>
+        </array>
+        <array key="SourceSansPro-Regular.ttf">
+            <string>SourceSansPro-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TransactionTableViewCell" rowHeight="124" id="KGk-i7-Jjw" customClass="TransactionTableViewCell" customModule="Tradepop" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="124"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="124"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="53B-TX-aAO" userLabel="mainView">
+                        <rect key="frame" x="0.0" y="16" width="320" height="108"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4S1-gI-Gwv" userLabel="statusView">
+                                <rect key="frame" x="0.0" y="0.0" width="5" height="108"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="5" id="pYM-o5-Coi"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="16€" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZaH-xe-Cu1">
+                                <rect key="frame" x="278.5" y="16" width="25.5" height="21"/>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="16"/>
+                                <color key="textColor" name="primaryColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEG-Eu-THt">
+                                <rect key="frame" x="21" y="16" width="241.5" height="76"/>
+                                <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent justo nulla, sollicitudin non mollis sed, volutpat vitae leo. Ut a hendrerit magna, ac tincidunt nulla. Ut consectetur urna in risus mollis tristique. Phasellus consectetur ante sit amet mauris molestie, quis molestie diam pretium. Fusce a ipsum at augue semper bibendum non at tortor. Ut purus odio, dapibus nec libero id, dictum molestie metus. Mauris posuere faucibus lacus id accumsan. Nam et purus sed dolor aliquet varius molestie eu leo. Nullam feugiat, tellus ac sagittis mattis, enim libero rhoncus ante, et semper orci libero eu erat. Proin est enim, posuere ac ex a, feugiat congue erat. Phasellus posuere nec dolor in aliquam. Aenean nec eros id risus euismod feugiat. Duis volutpat convallis est laoreet ultricies. Ut sodales, velit at commodo faucibus, nisl nibh mollis libero, id luctus tellus nibh vel arcu.</mutableString>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
+                                <color key="textColor" name="primaryColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="secondaryColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="dEG-Eu-THt" secondAttribute="bottom" constant="16" id="9Si-3h-TDT"/>
+                            <constraint firstAttribute="trailing" secondItem="ZaH-xe-Cu1" secondAttribute="trailing" constant="16" id="E4L-4q-ijg"/>
+                            <constraint firstItem="dEG-Eu-THt" firstAttribute="leading" secondItem="4S1-gI-Gwv" secondAttribute="trailing" constant="16" id="ME8-HU-9aL"/>
+                            <constraint firstItem="ZaH-xe-Cu1" firstAttribute="top" secondItem="53B-TX-aAO" secondAttribute="top" constant="16" id="MGE-D4-VBa"/>
+                            <constraint firstItem="4S1-gI-Gwv" firstAttribute="leading" secondItem="53B-TX-aAO" secondAttribute="leading" id="PD5-YH-2eY"/>
+                            <constraint firstItem="4S1-gI-Gwv" firstAttribute="top" secondItem="53B-TX-aAO" secondAttribute="top" id="Rsv-Rs-rYf"/>
+                            <constraint firstItem="ZaH-xe-Cu1" firstAttribute="leading" secondItem="dEG-Eu-THt" secondAttribute="trailing" constant="16" id="i2I-5E-Bsa"/>
+                            <constraint firstAttribute="bottom" secondItem="4S1-gI-Gwv" secondAttribute="bottom" id="icV-tl-8zU"/>
+                            <constraint firstItem="dEG-Eu-THt" firstAttribute="top" secondItem="53B-TX-aAO" secondAttribute="top" constant="16" id="vyA-UP-OyU"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="53B-TX-aAO" secondAttribute="bottom" id="02Z-q6-VEt"/>
+                    <constraint firstAttribute="trailing" secondItem="53B-TX-aAO" secondAttribute="trailing" id="HqK-wB-rq9"/>
+                    <constraint firstItem="53B-TX-aAO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="MiK-BK-C3D"/>
+                    <constraint firstItem="53B-TX-aAO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="quR-w2-47B"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="mainView" destination="53B-TX-aAO" id="VuA-AR-4pO"/>
+                <outlet property="priceLabel" destination="ZaH-xe-Cu1" id="2lH-qt-dan"/>
+                <outlet property="productName" destination="dEG-Eu-THt" id="hK7-dB-ljq"/>
+                <outlet property="statusView" destination="4S1-gI-Gwv" id="Db4-Se-fjv"/>
+            </connections>
+            <point key="canvasLocation" x="95.652173913043484" y="158.03571428571428"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="primaryColor">
+            <color red="0.22352941176470589" green="0.24313725490196078" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="secondaryColor">
+            <color red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

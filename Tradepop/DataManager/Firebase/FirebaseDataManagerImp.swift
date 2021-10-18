@@ -117,7 +117,10 @@ class FirebaseDataManagerImp: FirebaseDataManager {
                 let products: [Product] = snapshot.documents.map { document in
                     Product.parseDataFromFirebase(document: document)
                 }
-                completion(nil, products)
+                completion(nil, products.sorted(by: { product1, product2 in
+                    guard let firstDate = product1.date, let secondDate = product2.date else { return false }
+                    return firstDate.compare(secondDate) == .orderedDescending
+                }))
             }
         }
     }
@@ -190,7 +193,7 @@ class FirebaseDataManagerImp: FirebaseDataManager {
 
     func removeFromFavorites(productUuid: String, userUuid: String, completion: @escaping (Error?) -> ()) {
         db.collection(USERS_COLLECTION_KEY).document(userUuid).setData(["favorites": FieldValue.arrayRemove([productUuid])], merge: true) { error in
-            if error == nil { self.userFavorites.removeAll { uuid in return uuid == productUuid }}
+            if error == nil { self.userFavorites.removeAll { uuid in uuid == productUuid }}
             completion(error)
         }
     }
@@ -200,8 +203,28 @@ class FirebaseDataManagerImp: FirebaseDataManager {
             completion(document?.data()?["favorites"] as? [String])
         }
     }
-    
-    func getUserFavorites() -> [String]{
+
+    func getUserFavorites() -> [String] {
         return userFavorites
+    }
+
+    func getUserTransactions(userUuid: String, completion: @escaping (Error?, [Transaction]?) -> ()) {
+        var transactions = [Transaction]()
+        db.collection(TRANSACTIONS_COLLECTION_KEY).whereField("buyerUuid", isEqualTo: userUuid).getDocuments { buyerSnapshot, buyerError in
+            guard let buyerSnapshot = buyerSnapshot, buyerError == nil else { completion(buyerError, nil); return }
+            self.db.collection(TRANSACTIONS_COLLECTION_KEY).whereField("sellerUuid", isEqualTo: userUuid).getDocuments { sellerSnapshot, sellerError in
+                guard let sellerSnapshot = sellerSnapshot, sellerError == nil else { completion(sellerError, nil); return }
+                transactions.append(contentsOf: buyerSnapshot.documents.map { document in
+                    Transaction.parseDataFromFirebase(document: document, userUuid: userUuid)
+                })
+                transactions.append(contentsOf: sellerSnapshot.documents.map { document in
+                    Transaction.parseDataFromFirebase(document: document, userUuid: userUuid)
+                })
+                completion(nil, transactions.sorted(by: { transaction1, transaction2 in
+                    guard let firstDate = transaction1.date, let secondDate = transaction2.date else { return false }
+                    return firstDate.compare(secondDate) == .orderedDescending
+                }))
+            }
+        }
     }
 }

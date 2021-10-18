@@ -3,6 +3,7 @@
 "main_tab_bar_add" = "Añadir";
 "main_tab_bar_profile" = "Perfil";
 "main_tab_bar_favorites" = "Favoritos";
+"main_tab_bar_transactions" = "Transacciones";
 
 //Generic
 "generic_loading" = "Cargando...";
