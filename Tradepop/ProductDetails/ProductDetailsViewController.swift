@@ -168,9 +168,13 @@ extension ProductDetailsViewController: UIImagePickerControllerDelegate, UINavig
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         picker.dismiss(animated: true, completion: nil)
         if let image = info[.originalImage] as? UIImage {
-            coverImage.image = image
-            let resizedImage = Toucan(image: image).resize(CGSize(width: 1280, height: 1280), fitMode: Toucan.Resize.FitMode.clip)
-            viewModel.selectImage(imageData: resizedImage.image?.jpegData(compressionQuality: 1))
+            DispatchQueue.global(qos: .userInteractive).async {
+                let resizedImage = Toucan(image: image).resize(CGSize(width: 1280, height: 1280), fitMode: Toucan.Resize.FitMode.clip)
+                DispatchQueue.main.async {
+                    self.coverImage.image = image
+                    self.viewModel.selectImage(imageData: resizedImage.image?.jpegData(compressionQuality: 1))
+                }
+            }
         }
     }
 }
