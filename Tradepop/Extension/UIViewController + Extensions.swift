@@ -24,7 +24,10 @@ extension UIViewController {
     }
 
     func hideLoadingAlert(completion: (() -> Void)? = nil) {
-        guard let alert = loadingAlert else { return }
+        guard let alert = loadingAlert else {
+            if let completion = completion { completion() }
+            return
+        }
         alert.dismiss(animated: true, completion: completion)
         loadingAlert = nil
     }

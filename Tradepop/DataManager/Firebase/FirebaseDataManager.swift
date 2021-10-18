@@ -22,4 +22,12 @@ protocol FirebaseDataManager{
     func updateImage(imageData: Data, completion: @escaping (String?, Error?) -> ())
     
     func updateProduct(productUuid: String, title: String, description: String, price: Double, categoryId: Int, coverImageUrl: String, completion: @escaping (Error?) -> ())
+    
+    func getProductsFromUserFavorites(userUuid: String, completion: @escaping (Error?, [Product]?) -> ())
+    
+    func addToFavorites(productUuid: String, userUuid: String, completion: @escaping (Error?) -> ())
+    
+    func removeFromFavorites(productUuid: String, userUuid: String, completion: @escaping (Error?) -> ())
+    
+    func getUserFavorites() -> [String]
 }

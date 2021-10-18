@@ -18,6 +18,7 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet weak var myProductsLabel: UILabel!
     
     private let refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -52,6 +53,7 @@ class ProfileViewController: UIViewController {
     }
 
     private func configureView() {
+        myProductsLabel.text = NSLocalizedString("profile_my_products_label", comment: "")
         noUserView.onLogInButtonTapped = { [weak self] in
             guard let self = self else { return }
             self.viewModel.loginButtonTapped()
@@ -66,7 +68,7 @@ class ProfileViewController: UIViewController {
         viewModel.logOut()
     }
     
-    @objc private func refreshCollectionView() {
+    @objc func refreshCollectionView() {
         viewModel.getUserProducts()
     }
 }

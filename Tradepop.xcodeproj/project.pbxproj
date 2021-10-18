@@ -15,6 +15,11 @@
 		D30B02B526FA41B800D63CA8 /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D30B02B226FA41B800D63CA8 /* SourceSansPro-Regular.ttf */; };
 		D30B02B626FA41B800D63CA8 /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D30B02B326FA41B800D63CA8 /* SourceSansPro-Bold.ttf */; };
 		D30B02B726FA41B800D63CA8 /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D30B02B426FA41B800D63CA8 /* SourceSansPro-SemiBold.ttf */; };
+		D31D1F5E271C9A9B003B2A49 /* FavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31D1F5D271C9A9B003B2A49 /* FavoritesCoordinator.swift */; };
+		D31D1F62271C9B89003B2A49 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31D1F60271C9B89003B2A49 /* FavoritesViewController.swift */; };
+		D31D1F63271C9B89003B2A49 /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D31D1F61271C9B89003B2A49 /* FavoritesViewController.xib */; };
+		D31D1F65271C9B94003B2A49 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31D1F64271C9B94003B2A49 /* FavoritesViewModel.swift */; };
+		D31D1F67271C9BA2003B2A49 /* FavoritesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31D1F66271C9BA2003B2A49 /* FavoritesDataManager.swift */; };
 		D328D8F52704E587009D9F28 /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328D8F42704E587009D9F28 /* UserDataManager.swift */; };
 		D328D8F82704E6B5009D9F28 /* FirebaseUserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328D8F72704E6B5009D9F28 /* FirebaseUserDataManager.swift */; };
 		D328D8FA2704E6D6009D9F28 /* FirebaseUserDataManagerImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328D8F92704E6D6009D9F28 /* FirebaseUserDataManagerImp.swift */; };
@@ -98,6 +103,11 @@
 		D30B02B226FA41B800D63CA8 /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
 		D30B02B326FA41B800D63CA8 /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
 		D30B02B426FA41B800D63CA8 /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
+		D31D1F5D271C9A9B003B2A49 /* FavoritesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCoordinator.swift; sourceTree = "<group>"; };
+		D31D1F60271C9B89003B2A49 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		D31D1F61271C9B89003B2A49 /* FavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
+		D31D1F64271C9B94003B2A49 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		D31D1F66271C9BA2003B2A49 /* FavoritesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesDataManager.swift; sourceTree = "<group>"; };
 		D328D8F42704E587009D9F28 /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
 		D328D8F72704E6B5009D9F28 /* FirebaseUserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserDataManager.swift; sourceTree = "<group>"; };
 		D328D8F92704E6D6009D9F28 /* FirebaseUserDataManagerImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserDataManagerImp.swift; sourceTree = "<group>"; };
@@ -233,6 +243,17 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		D31D1F5F271C9ABF003B2A49 /* favorites */ = {
+			isa = PBXGroup;
+			children = (
+				D31D1F60271C9B89003B2A49 /* FavoritesViewController.swift */,
+				D31D1F61271C9B89003B2A49 /* FavoritesViewController.xib */,
+				D31D1F64271C9B94003B2A49 /* FavoritesViewModel.swift */,
+				D31D1F66271C9BA2003B2A49 /* FavoritesDataManager.swift */,
+			);
+			path = favorites;
+			sourceTree = "<group>";
+		};
 		D328D8F62704E6A5009D9F28 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +301,7 @@
 				D32B187526F79C370093EE46 /* Products */,
 				D32B187C26F7A6AF0093EE46 /* AddProduct */,
 				D32B187D26F7A7220093EE46 /* Profile */,
+				D31D1F5F271C9ABF003B2A49 /* favorites */,
 				D30B02AC26FA3F8500D63CA8 /* LoginRegister */,
 				D3B338D82714A3CE00A4747D /* ProductDetails */,
 			);
@@ -336,6 +358,7 @@
 				D3C188402711B5DF00505FC8 /* ProductsCoordinator.swift */,
 				D3B421032711F19F000E6E08 /* AddProductCoordinator.swift */,
 				D3B338E12714A43F00A4747D /* ProductDetailsCoordinator.swift */,
+				D31D1F5D271C9A9B003B2A49 /* FavoritesCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -539,6 +562,7 @@
 				D3BF082026FE4C5E0043B563 /* LoginRegisterViewController.xib in Resources */,
 				D3EB97A12708789C00CFF38A /* GoogleService-Info.plist in Resources */,
 				D30B02B626FA41B800D63CA8 /* SourceSansPro-Bold.ttf in Resources */,
+				D31D1F63271C9B89003B2A49 /* FavoritesViewController.xib in Resources */,
 				D30B02B726FA41B800D63CA8 /* SourceSansPro-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -682,10 +706,13 @@
 				D3B338E02714A42100A4747D /* ProductDetailsDataManager.swift in Sources */,
 				D357E74E26F8D44500A8723F /* UIColor+Extensions.swift in Sources */,
 				D3B338D027142A2700A4747D /* ProductCell.swift in Sources */,
+				D31D1F65271C9B94003B2A49 /* FavoritesViewModel.swift in Sources */,
 				D32B184126F78DC00093EE46 /* SceneDelegate.swift in Sources */,
 				D3EB97A32708D13200CFF38A /* User.swift in Sources */,
 				D3EB979F27086F3500CFF38A /* UIViewController + Extensions.swift in Sources */,
+				D31D1F62271C9B89003B2A49 /* FavoritesViewController.swift in Sources */,
 				D3BF081C26FE4C0B0043B563 /* LoginRegisterViewModel.swift in Sources */,
+				D31D1F5E271C9A9B003B2A49 /* FavoritesCoordinator.swift in Sources */,
 				D3B421022711EF6B000E6E08 /* AddProductDataManager.swift in Sources */,
 				D3B338D32714312100A4747D /* ProductCellViewModel.swift in Sources */,
 				D328D8F52704E587009D9F28 /* UserDataManager.swift in Sources */,
@@ -699,6 +726,7 @@
 				D3B420FC2711EF2E000E6E08 /* AddProductViewModel.swift in Sources */,
 				D3B338DB2714A3F700A4747D /* ProductDetailsViewController.swift in Sources */,
 				D3B420FF2711EF4A000E6E08 /* AddProductViewController.swift in Sources */,
+				D31D1F67271C9BA2003B2A49 /* FavoritesDataManager.swift in Sources */,
 				D357E76326F8F51C00A8723F /* ProfileViewController.swift in Sources */,
 				D357E75826F8E4EE00A8723F /* ProfileCoordinator.swift in Sources */,
 				D3C188412711B5DF00505FC8 /* ProductsCoordinator.swift in Sources */,

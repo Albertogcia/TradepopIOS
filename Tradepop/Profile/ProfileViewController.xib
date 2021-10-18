@@ -20,6 +20,7 @@
                 <outlet property="activityIndicatorView" destination="WXY-jU-ziF" id="eDV-f2-eDI"/>
                 <outlet property="collectionView" destination="ESC-FQ-rol" id="HIU-HR-VLP"/>
                 <outlet property="mainView" destination="rup-IP-cef" id="4SP-JB-dOk"/>
+                <outlet property="myProductsLabel" destination="1ok-2u-uTv" id="ToE-bo-X14"/>
                 <outlet property="noUserView" destination="hzk-b3-Wuw" id="Tpb-Ed-eW6"/>
                 <outlet property="userNameLabel" destination="Q1H-e2-nBF" id="JTW-FC-P3w"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -56,7 +57,7 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alberto García Antuña" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1H-e2-nBF">
-                                    <rect key="frame" x="64" y="29.5" width="293" height="20.5"/>
+                                    <rect key="frame" x="64" y="31" width="293" height="19"/>
                                     <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="16"/>
                                     <color key="textColor" name="secondaryColor"/>
                                     <nil key="highlightedColor"/>
@@ -87,20 +88,20 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mis productos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ok-2u-uTv">
-                            <rect key="frame" x="16" y="76" width="382" height="20.5"/>
+                            <rect key="frame" x="16" y="76" width="382" height="19"/>
                             <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="16"/>
                             <color key="textColor" name="primaryColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wrE-6m-rRI">
-                            <rect key="frame" x="16" y="100.5" width="382" height="1"/>
+                            <rect key="frame" x="16" y="99" width="382" height="1"/>
                             <color key="backgroundColor" name="secondaryColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="9ua-Y3-Rde"/>
                             </constraints>
                         </view>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ESC-FQ-rol">
-                            <rect key="frame" x="14" y="101.5" width="386" height="716.5"/>
+                            <rect key="frame" x="14" y="100" width="386" height="718"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Aas-Iu-b9G">
                                 <size key="itemSize" width="128" height="128"/>
@@ -110,7 +111,7 @@
                             </collectionViewFlowLayout>
                         </collectionView>
                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="WXY-jU-ziF">
-                            <rect key="frame" x="188.5" y="441.5" width="37" height="37"/>
+                            <rect key="frame" x="188.5" y="440.5" width="37" height="37"/>
                             <color key="color" name="primaryColor"/>
                         </activityIndicatorView>
                     </subviews>

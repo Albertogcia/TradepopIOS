@@ -40,6 +40,12 @@ class AppCoordinator: Coordinator {
         addChildCoordinator(productsCoordinator)
         productsCoordinator.start()
         
+        let favoritesNavigationController = UINavigationController()
+        favoritesNavigationController.isNavigationBarHidden = true
+        let favoritesCoordinator = FavoritesCoordinator(presenter: favoritesNavigationController, userDataManager: userDataManager, favoritesDataManager: dataManager, productDetailsDataManager: dataManager)
+        addChildCoordinator(favoritesCoordinator)
+        favoritesCoordinator.start()
+        
         let profileNavigationController = UINavigationController()
         profileNavigationController.isNavigationBarHidden = true
         let profileCoordinator = ProfileCoordinator(presenter: profileNavigationController, userDataManager: userDataManager, profileDataManager: dataManager, productDetailsDataManager: dataManager)
@@ -50,24 +56,27 @@ class AppCoordinator: Coordinator {
         addProductNavigationController.isNavigationBarHidden = true
         let addProductCoordinator = AddProductCoordinator(presenter: addProductNavigationController, userDataManager: userDataManager, addProductDataManager: dataManager) {
             tabBarController.selectedIndex = 0
-            profileCoordinator.reloadProducts()
         }
         addChildCoordinator(addProductCoordinator)
         addProductCoordinator.start()
         
-        tabBarController.viewControllers = [productsNavigationController, addProductNavigationController, profileNavigationController]
+        tabBarController.viewControllers = [productsNavigationController, favoritesNavigationController, addProductNavigationController, profileNavigationController]
         
         tabBarController.tabBar.items?[0].image = UIImage(named: "icon_home")?.withTintColor(.primaryColor)
         tabBarController.tabBar.items?[0].selectedImage = UIImage(named: "icon_home")?.withTintColor(.accentColor)
         tabBarController.tabBar.items?[0].title = NSLocalizedString("main_tab_bar_products", comment: "")
         
-        tabBarController.tabBar.items?[1].image = UIImage(named: "icon_add")?.withTintColor(.primaryColor)
-        tabBarController.tabBar.items?[1].selectedImage = UIImage(named: "icon_add")?.withTintColor(.accentColor)
-        tabBarController.tabBar.items?[1].title = NSLocalizedString("main_tab_bar_add", comment: "")
+        tabBarController.tabBar.items?[1].image = UIImage(named: "icon_favorite")?.withTintColor(.primaryColor)
+        tabBarController.tabBar.items?[1].selectedImage = UIImage(named: "icon_favorite")?.withTintColor(.accentColor)
+        tabBarController.tabBar.items?[1].title = NSLocalizedString("main_tab_bar_favorites", comment: "")
         
-        tabBarController.tabBar.items?[2].image = UIImage(named: "icon_profile")?.withTintColor(.primaryColor)
-        tabBarController.tabBar.items?[2].selectedImage = UIImage(named: "icon_profile")?.withTintColor(.accentColor)
-        tabBarController.tabBar.items?[2].title = NSLocalizedString("main_tab_bar_profile", comment: "")
+        tabBarController.tabBar.items?[2].image = UIImage(named: "icon_add")?.withTintColor(.primaryColor)
+        tabBarController.tabBar.items?[2].selectedImage = UIImage(named: "icon_add")?.withTintColor(.accentColor)
+        tabBarController.tabBar.items?[2].title = NSLocalizedString("main_tab_bar_add", comment: "")
+        
+        tabBarController.tabBar.items?[3].image = UIImage(named: "icon_profile")?.withTintColor(.primaryColor)
+        tabBarController.tabBar.items?[3].selectedImage = UIImage(named: "icon_profile")?.withTintColor(.accentColor)
+        tabBarController.tabBar.items?[3].title = NSLocalizedString("main_tab_bar_profile", comment: "")
     
         window.rootViewController = tabBarController
         window.makeKeyAndVisible()

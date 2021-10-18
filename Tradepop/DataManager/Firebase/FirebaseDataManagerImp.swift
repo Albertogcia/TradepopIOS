@@ -10,6 +10,7 @@ import Foundation
 
 private let PRODUCTS_COLLECTION_KEY = "products"
 private let TRANSACTIONS_COLLECTION_KEY = "transactions"
+private let USERS_COLLECTION_KEY = "users"
 
 class FirebaseDataManagerImp: FirebaseDataManager {
 
@@ -19,6 +20,8 @@ class FirebaseDataManagerImp: FirebaseDataManager {
     lazy var storageReference: StorageReference = {
         storage.reference()
     }()
+
+    private var userFavorites = [String]()
 
     func createNewProduct(imageData: Data, title: String, description: String, categoryId: Int, price: Double, userUuid: String, userName: String, completion: @escaping (Error?) -> ()) {
         let uuid = UUID().uuidString.lowercased().appending(".jpeg")
@@ -55,7 +58,11 @@ class FirebaseDataManagerImp: FirebaseDataManager {
 
     func getAllProducts(userUuid: String?, completion: @escaping (Error?, [Product]?) -> ()) {
         var query = db.collection(PRODUCTS_COLLECTION_KEY).order(by: "date", descending: true)
-        if let userUuid = userUuid{
+        if let userUuid = userUuid {
+            getUserFavoritesList(userUuid: userUuid) { favorites in
+                guard let favorites = favorites else { return }
+                self.userFavorites = favorites
+            }
             query = db.collection(PRODUCTS_COLLECTION_KEY).whereField("owner", isNotEqualTo: userUuid).order(by: "owner", descending: true).order(by: "date", descending: true)
         }
         query.getDocuments { snapshot, error in
@@ -78,6 +85,10 @@ class FirebaseDataManagerImp: FirebaseDataManager {
     }
 
     func getUserProducts(userUuid: String, completion: @escaping (Error?, [Product]?) -> ()) {
+        getUserFavoritesList(userUuid: userUuid) { favorites in
+            guard let favorites = favorites else { return }
+            self.userFavorites = favorites
+        }
         db.collection(PRODUCTS_COLLECTION_KEY).whereField("owner", isEqualTo: userUuid).order(by: "date", descending: true).getDocuments { snapshot, error in
             if error == nil {
                 if let snapshot = snapshot {
@@ -93,6 +104,20 @@ class FirebaseDataManagerImp: FirebaseDataManager {
             }
             else {
                 completion(error, nil)
+            }
+        }
+    }
+
+    func getProductsFromUserFavorites(userUuid: String, completion: @escaping (Error?, [Product]?) -> ()) {
+        getUserFavoritesList(userUuid: userUuid) { favoritesList in
+            guard let favoritesList = favoritesList, !favoritesList.isEmpty else { completion(nil, [Product]()); return }
+            self.userFavorites = favoritesList
+            self.db.collection(PRODUCTS_COLLECTION_KEY).whereField(FieldPath.documentID(), in: favoritesList).getDocuments { snapshot, error in
+                guard let snapshot = snapshot, error == nil else { completion(error, nil); return }
+                let products: [Product] = snapshot.documents.map { document in
+                    Product.parseDataFromFirebase(document: document)
+                }
+                completion(nil, products)
             }
         }
     }
@@ -154,5 +179,29 @@ class FirebaseDataManagerImp: FirebaseDataManager {
         ], merge: true) { error in
             completion(error)
         }
+    }
+
+    func addToFavorites(productUuid: String, userUuid: String, completion: @escaping (Error?) -> ()) {
+        db.collection(USERS_COLLECTION_KEY).document(userUuid).setData(["favorites": FieldValue.arrayUnion([productUuid])], merge: true) { error in
+            if error == nil { self.userFavorites.append(productUuid) }
+            completion(error)
+        }
+    }
+
+    func removeFromFavorites(productUuid: String, userUuid: String, completion: @escaping (Error?) -> ()) {
+        db.collection(USERS_COLLECTION_KEY).document(userUuid).setData(["favorites": FieldValue.arrayRemove([productUuid])], merge: true) { error in
+            if error == nil { self.userFavorites.removeAll { uuid in return uuid == productUuid }}
+            completion(error)
+        }
+    }
+
+    func getUserFavoritesList(userUuid: String, completion: @escaping ([String]?) -> ()) {
+        db.collection(USERS_COLLECTION_KEY).document(userUuid).getDocument { document, _ in
+            completion(document?.data()?["favorites"] as? [String])
+        }
+    }
+    
+    func getUserFavorites() -> [String]{
+        return userFavorites
     }
 }

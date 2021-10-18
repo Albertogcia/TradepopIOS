@@ -2,6 +2,7 @@
 "main_tab_bar_products" = "Products";
 "main_tab_bar_add" = "Add";
 "main_tab_bar_profile" = "Profile";
+"main_tab_bar_favorites" = "Favorites";
 
 //Generic
 "generic_loading" = "Loading...";
@@ -63,3 +64,6 @@
 "product_details_upload_product_error_message" = "An error has occurred please try again later";
 "product_details_delete_product_title" = "Delete product";
 "product_details_delete_product_message" = "Are you sure you want to delete this product?";
+
+//Profile
+"profile_my_products_label" = "My products";

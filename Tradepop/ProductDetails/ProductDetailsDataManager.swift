@@ -16,5 +16,11 @@ protocol ProductDetailsDataManager {
     func updateProduct(productUuid: String, title: String, description: String, price: Double, categoryId: Int, coverImageUrl: String, completion: @escaping (Error?) -> ())
     
     func updateImage(imageData: Data, completion: @escaping (String?, Error?) -> ())
+    
+    func addToFavorites(productUuid: String, userUuid: String, completion: @escaping (Error?) -> ())
+    
+    func removeFromFavorites(productUuid: String, userUuid: String, completion: @escaping (Error?) -> ())
+    
+    func getUserFavorites() -> [String]
 
 }

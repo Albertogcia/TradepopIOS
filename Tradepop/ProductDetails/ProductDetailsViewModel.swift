@@ -10,6 +10,7 @@ import Foundation
 protocol ProductDetailsViewDelegate: AnyObject {
     func updateView()
     func showErrorMessage(message: String)
+    func changeFavoriteIcon(active: Bool)
     func dismissLoadingAlert()
 }
 
@@ -123,6 +124,43 @@ class ProductDetailsViewModel {
             }
             else {
                 self.showErrorMessage()
+            }
+        }
+    }
+    
+    func isProductFavorite() -> Bool{
+        return productDetailsDataManager.getUserFavorites().contains(product.uuid)
+    }
+    
+    func changeFavorite(){
+        userDataManager.getCurrentUser {[weak self] user in
+            guard let self = self else { return }
+            guard let user = user else {
+                self.showErrorMessage()
+                if self.isProductFavorite(){
+                    self.viewDelegate?.changeFavoriteIcon(active: true)
+                }
+                else{
+                    self.viewDelegate?.changeFavoriteIcon(active: false)
+                }
+                return
+            }
+            if !self.isProductFavorite(){
+                
+                self.productDetailsDataManager.addToFavorites(productUuid: self.product.uuid, userUuid: user.uuid) { [weak self] error in
+                    guard let self = self else { return }
+                    if error != nil{
+                        self.viewDelegate?.changeFavoriteIcon(active: false)
+                    }
+                }
+            }
+            else{
+                self.productDetailsDataManager.removeFromFavorites(productUuid: self.product.uuid, userUuid: user.uuid) { [weak self] error in
+                    guard let self = self else { return }
+                    if error != nil{
+                        self.viewDelegate?.changeFavoriteIcon(active: true)
+                    }
+                }
             }
         }
     }

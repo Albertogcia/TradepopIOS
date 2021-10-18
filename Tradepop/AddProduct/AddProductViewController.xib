@@ -57,7 +57,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Rs-4Z-crv">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="630"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="637"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K0t-Hr-BDs">
                                     <rect key="frame" x="16" y="16" width="382" height="191"/>
@@ -83,20 +83,20 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPL-hM-ykZ">
-                                    <rect key="frame" x="16" y="223" width="382" height="19"/>
+                                    <rect key="frame" x="16" y="223" width="382" height="20.5"/>
                                     <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="16"/>
                                     <color key="textColor" name="primaryColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LyM-hI-cgC" userLabel="Separator">
-                                    <rect key="frame" x="16" y="246" width="382" height="1"/>
+                                    <rect key="frame" x="16" y="247.5" width="382" height="1"/>
                                     <color key="backgroundColor" name="secondaryColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="INk-Ty-47X"/>
                                     </constraints>
                                 </view>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Y3-r1-GO2" customClass="TextFieldWithPadding" customModule="Tradepop" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="255" width="382" height="35"/>
+                                    <rect key="frame" x="16" y="256.5" width="382" height="35"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="35" id="Jk1-F6-W4s"/>
                                     </constraints>
@@ -110,43 +110,43 @@
                                     </userDefinedRuntimeAttributes>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descripción*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1G-pz-w5r">
-                                    <rect key="frame" x="16" y="306" width="382" height="19"/>
+                                    <rect key="frame" x="16" y="307.5" width="382" height="20.5"/>
                                     <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="16"/>
                                     <color key="textColor" name="primaryColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W5g-pF-oS7" userLabel="Separator">
-                                    <rect key="frame" x="16" y="329" width="382" height="1"/>
+                                    <rect key="frame" x="16" y="332" width="382" height="1"/>
                                     <color key="backgroundColor" name="secondaryColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="7Xf-Zh-EPL"/>
                                     </constraints>
                                 </view>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="k0o-jP-hxA">
-                                    <rect key="frame" x="16" y="338" width="382" height="33"/>
+                                    <rect key="frame" x="16" y="341" width="382" height="34"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <color key="textColor" name="primaryColor"/>
                                     <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categoría*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgY-xn-tlR">
-                                    <rect key="frame" x="16" y="387" width="382" height="19"/>
+                                    <rect key="frame" x="16" y="391" width="382" height="20.5"/>
                                     <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="16"/>
                                     <color key="textColor" name="primaryColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K4l-Sh-AA8" userLabel="Separator">
-                                    <rect key="frame" x="16" y="410" width="382" height="1"/>
+                                    <rect key="frame" x="16" y="415.5" width="382" height="1"/>
                                     <color key="backgroundColor" name="secondaryColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="NkB-s1-5k7"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8KF-I4-pE9">
-                                    <rect key="frame" x="16" y="419" width="382" height="40"/>
+                                    <rect key="frame" x="16" y="424.5" width="382" height="40"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona categoria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNw-bf-Frp">
-                                            <rect key="frame" x="8" y="12" width="330" height="16.5"/>
+                                            <rect key="frame" x="8" y="11" width="330" height="18"/>
                                             <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                             <color key="textColor" name="primaryColor"/>
                                             <nil key="highlightedColor"/>
@@ -175,20 +175,20 @@
                                     </connections>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Precio*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9k-GD-d3I">
-                                    <rect key="frame" x="16" y="475" width="382" height="19"/>
+                                    <rect key="frame" x="16" y="480.5" width="382" height="20.5"/>
                                     <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="16"/>
                                     <color key="textColor" name="primaryColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sWy-rw-NzR" userLabel="Separator">
-                                    <rect key="frame" x="16" y="498" width="382" height="1"/>
+                                    <rect key="frame" x="16" y="505" width="382" height="1"/>
                                     <color key="backgroundColor" name="secondaryColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="mdP-FJ-qQ2"/>
                                     </constraints>
                                 </view>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nEy-4D-9Ov" customClass="TextFieldWithPadding" customModule="Tradepop" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="507" width="382" height="35"/>
+                                    <rect key="frame" x="16" y="514" width="382" height="35"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="35" id="iSz-3C-NxT"/>
                                     </constraints>
@@ -202,7 +202,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQW-R0-be5">
-                                    <rect key="frame" x="159" y="574" width="96" height="40"/>
+                                    <rect key="frame" x="159" y="581" width="96" height="40"/>
                                     <color key="backgroundColor" name="accentColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="fhk-u6-dg7"/>
@@ -309,10 +309,10 @@
     </objects>
     <designables>
         <designable name="2Y3-r1-GO2">
-            <size key="intrinsicContentSize" width="20" height="18"/>
+            <size key="intrinsicContentSize" width="19" height="19.5"/>
         </designable>
         <designable name="nEy-4D-9Ov">
-            <size key="intrinsicContentSize" width="20" height="18"/>
+            <size key="intrinsicContentSize" width="19" height="19.5"/>
         </designable>
     </designables>
     <resources>

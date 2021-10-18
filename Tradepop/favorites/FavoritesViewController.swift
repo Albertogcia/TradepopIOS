@@ -1,19 +1,22 @@
 //
-//  ProductsViewController.swift
+//  FavoritesViewController.swift
 //  Tradepop
 //
-//  Created by Alberto García Antuña on 9/10/21.
+//  Created by Alberto García Antuña on 17/10/21.
 //
 
 import UIKit
 
 private let PRODUCT_CELL_IDENTIFIER = "ProductCell"
 
-class ProductsViewController: UIViewController {
+class FavoritesViewController: UIViewController {
 
+    @IBOutlet var noUserView: NoUserView!
+
+    @IBOutlet var mainView: UIView!
+
+    @IBOutlet var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet var collectionView: UICollectionView!
-    @IBOutlet var searchBar: UISearchBar!
-    @IBOutlet var indicatorView: UIActivityIndicatorView!
 
     private let refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -22,23 +25,11 @@ class ProductsViewController: UIViewController {
         return refreshControl
     }()
 
-    let viewModel: ProductsViewModel
+    let viewModel: FavoritesViewModel
 
-    init(viewModel: ProductsViewModel) {
+    init(viewModel: FavoritesViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configureView()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        let backBarButtton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        navigationItem.backBarButtonItem = backBarButtton
-        navigationItem.backBarButtonItem?.tintColor = .secondaryColor
-        viewModel.viewWillAppear()
     }
 
     @available(*, unavailable)
@@ -46,20 +37,36 @@ class ProductsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureView()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let backBarButtton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backBarButtton
+        navigationItem.backBarButtonItem?.tintColor = .secondaryColor
+        viewModel.viewWillAppear()
+    }
+
     private func configureView() {
+        noUserView.onLogInButtonTapped = { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.loginButtonTapped()
+        }
         collectionView.refreshControl = refreshControl
         collectionView.register(UINib(nibName: PRODUCT_CELL_IDENTIFIER, bundle: nil), forCellWithReuseIdentifier: PRODUCT_CELL_IDENTIFIER)
-        searchBar.delegate = self
         collectionView.delegate = self
         collectionView.dataSource = self
     }
 
     @objc func refreshCollectionView() {
-        viewModel.getAllProducts()
+        viewModel.getFavoriteProducts()
     }
 }
 
-extension ProductsViewController: UICollectionViewDataSource {
+extension FavoritesViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         viewModel.numberOfSections()
     }
@@ -76,7 +83,7 @@ extension ProductsViewController: UICollectionViewDataSource {
     }
 }
 
-extension ProductsViewController: UICollectionViewDelegateFlowLayout {
+extension FavoritesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (view.frame.width - 42) / 2
         let height = width + 72
@@ -86,28 +93,35 @@ extension ProductsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return CGFloat(14)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.viewModel.didSelectItem(at: indexPath)
+        viewModel.didSelectItem(at: indexPath)
     }
 }
 
-extension ProductsViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        viewModel.setTextToFilter(textToFilter: searchText)
-    }
-}
-
-extension ProductsViewController: ProductsViewDelegate {
+extension FavoritesViewController: FavoritesViewDelegate {
     func productsFetched() {
-        indicatorView.isHidden = true
+        activityIndicatorView.isHidden = true
         refreshControl.isRefreshing ? refreshControl.endRefreshing() : nil
         collectionView.reloadData()
     }
 
     func showErrorMessage(message: String) {
-        indicatorView.isHidden = true
+        activityIndicatorView.isHidden = true
         refreshControl.isRefreshing ? refreshControl.endRefreshing() : nil
         showErrorAlert(message: message)
+    }
+
+    func updateView(user: User?) {
+        if user != nil {
+            noUserView.isHidden = true
+            mainView.isHidden = false
+            collectionView.reloadData()
+            activityIndicatorView.isHidden = false
+        }
+        else {
+            mainView.isHidden = true
+            noUserView.isHidden = false
+        }
     }
 }

@@ -37,6 +37,8 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet var editButton: UIButton!
     @IBOutlet var deleteButton: UIButton!
     
+    let navigationBarFavoriteButton = UIButton(type: .custom)
+    
     let viewModel: ProductDetailsViewModel
     
     init(viewModel: ProductDetailsViewModel) {
@@ -64,6 +66,17 @@ class ProductDetailsViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
         tabBarController?.tabBar.isHidden = true
+        navigationBarFavoriteButton.tintColor = .secondaryColor
+        if viewModel.isProductFavorite(){
+            navigationBarFavoriteButton.setImage(UIImage(named: "icon_favorite_fill"), for: .normal)
+        }
+        else{
+            navigationBarFavoriteButton.setImage(UIImage(named: "icon_favorite"), for: .normal)
+        }
+        navigationBarFavoriteButton.addTarget(self, action: #selector(changeFavorite), for: .touchUpInside)
+        navigationBarFavoriteButton.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        let barButton = UIBarButtonItem(customView: navigationBarFavoriteButton)
+        self.navigationItem.rightBarButtonItem = barButton
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -112,6 +125,16 @@ class ProductDetailsViewController: UIViewController {
         imagePickerVC.mediaTypes = [(kUTTypeJPEG as String), (kUTTypeImage as String)]
         imagePickerVC.delegate = self
         present(imagePickerVC, animated: true)
+    }
+    
+    @objc private func changeFavorite(){
+        if !viewModel.isProductFavorite(){
+            navigationBarFavoriteButton.setImage(UIImage(named: "icon_favorite_fill"), for: .normal)
+        }
+        else{
+            navigationBarFavoriteButton.setImage(UIImage(named: "icon_favorite"), for: .normal)
+        }
+        viewModel.changeFavorite()
     }
     
     @IBAction func categoryTapped(_ sender: Any) {
@@ -164,6 +187,15 @@ extension ProductDetailsViewController: ProductDetailsViewDelegate {
         hideLoadingAlert { [weak self] in
             guard let self = self else { return }
             self.showErrorAlert(message: message)
+        }
+    }
+    
+    func changeFavoriteIcon(active: Bool) {
+        if active{
+            navigationBarFavoriteButton.setImage(UIImage(named: "icon_favorite_fill"), for: .normal)
+        }
+        else{
+            navigationBarFavoriteButton.setImage(UIImage(named: "icon_favorite"), for: .normal)
         }
     }
     
