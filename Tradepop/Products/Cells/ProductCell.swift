@@ -19,7 +19,7 @@ class ProductCell: UICollectionViewCell {
         didSet {
             guard let viewModel = viewModel else { return }
             priceLabel.text = viewModel.productPrice
-            descriptionLabel.text = viewModel.productDescription
+            descriptionLabel.text = viewModel.productTitle
             downloadImage(stringUrl: viewModel.productImageUrl)
         }
     }

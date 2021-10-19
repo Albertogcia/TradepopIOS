@@ -11,13 +11,13 @@ class ProductCellViewModel {
     let product: Product
     
     var productPrice: String?
-    var productDescription: String?
+    var productTitle: String?
     var productImageUrl: String?
     
     init(product: Product) {
         self.product = product
     
-        self.productDescription = product.description
+        self.productTitle = product.title
         self.productImageUrl = product.coverImageUrl
         
         let formatter = NumberFormatter()
